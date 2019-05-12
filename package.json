@@ -12,7 +12,9 @@
     "node-sass": "^4.12.0",
     "twitch": "^2.2.3",
     "vue": "^2.6.6",
+    "vue-instagram": "^2.0.1",
     "vue-router": "^3.0.1",
+    "vue-tweet-embed": "^2.3.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

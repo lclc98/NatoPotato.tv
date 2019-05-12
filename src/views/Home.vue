@@ -89,21 +89,19 @@
             </div>
           </div>
         </div>
-        <div v-else class="card">
-          <header class="card-header">
 
-            <p class="card-header-title">
-              Not Live
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="columns">
-              <div class="column is-four-fifths">
-                <iframe width="600" height="340" src="https://www.youtube.com/embed/+lastest?list=UURuM4_srnCdgGN50IlJxNBQ" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="column is-two-fifths">
-              </div>
-            </div>
+        <div class="title is-1">
+          SCHEDULE
+        </div>
+        <div class="columns">
+          <div class="column is-one-third">
+            <YoutubeVideos></YoutubeVideos>
+          </div>
+          <div class="column is-one-third">
+            <TwitterFeed></TwitterFeed>
+          </div>
+          <div class="column is-one-third">
+
           </div>
         </div>
       </div>
@@ -113,13 +111,20 @@
 </template>
 
 <script>
+import YoutubeVideos from '../component/YoutubeVideos.vue';
+import TwitterFeed from '../component/TwitterFeed.vue';
+
 const TwitchClient = require('twitch').default;
 
 let twitchClient;
 export default {
   name: 'home',
+  components: { TwitterFeed, YoutubeVideos },
   data() {
-    return { live: false, channel: 'natopotato' };
+    return {
+      live: false,
+      channel: 'natopotato',
+    };
   },
 
   async mounted() {
@@ -132,10 +137,27 @@ export default {
         const user = await twitchClient.helix.users.getUserByName(userName);
         return await twitchClient.helix.streams.getStreamByUserId(user.id);
       } catch (e) {
-        console.log(e);
         return false;
       }
     },
   },
 };
 </script>
+
+
+<style>
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+  }
+</style>
