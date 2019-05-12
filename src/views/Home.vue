@@ -114,7 +114,6 @@
 
 <script>
 const TwitchClient = require('twitch').default;
-const parse = require('xml-parser');
 
 let twitchClient;
 export default {
@@ -124,7 +123,7 @@ export default {
   },
 
   async mounted() {
-    twitchClient = await TwitchClient.withClientCredentials(process.env.VUE_APP_CLIENT_ID, process.env.VUE_APP_CLIENT_SECRET);
+    twitchClient = await TwitchClient.withClientCredentials(process.env.VUE_APP_CLIENT_ID);
     this.live = await this.isStreamLive(this.channel);
   },
   methods: {
