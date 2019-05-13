@@ -18,7 +18,7 @@
         <div v-bind:key="index" v-for="(item, index) in youtubePlaylist">
           <div v-if="index < 3" class="video-wrapper">
             <iframe  class="video"
-                     :src="`http://www.youtube.com/embed/${item.contentDetails.videoId}`"
+                     :src="`https://www.youtube.com/embed/${item.contentDetails.videoId}`"
                      frameborder="0"
                      allowfullscreen></iframe>
           </div>
@@ -48,5 +48,18 @@ export default {
 </script>
 
 <style scoped>
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 47%;
+    padding-top: 25px;
+    height: 0;
+  }
 </style>
