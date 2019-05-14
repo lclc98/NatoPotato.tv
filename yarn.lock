@@ -1600,11 +1600,6 @@ brorand@^1.0.1:
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
-browser-jsonp@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/browser-jsonp/-/browser-jsonp-1.1.5.tgz#2863c8d9328997ba4163bc2fa4b4db66f6f7479d"
-  integrity sha1-KGPI2TKJl7pBY7wvpLTbZvb3R50=
-
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/browserify-aes/-/browserify-aes-1.2.0.tgz#326734642f403dabc3003209853bb70ad428ef48"
@@ -7999,10 +7994,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twitch@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/twitch/-/twitch-2.2.3.tgz#49851adae66bbc739bcf03e47d836d6030499a0d"
-  integrity sha512-q5ZFzC+W6oqWPsFC9G2YNPDWBRySCmL3/NaMtR8AC4nmB8tEdCFh80zrRwEFYqsCIrRgamNJ6Qzm3AjpkXQbgA==
+twitch@^3.0.0-pre.2:
+  version "3.0.0-pre.2"
+  resolved "https://registry.yarnpkg.com/twitch/-/twitch-3.0.0-pre.2.tgz#a53fb3f143b54d3766375b8dbcd8ea14b308edae"
+  integrity sha512-AOdjp72V3MLhnEUcJbolNQ0SOCOiKbfwSmcZwfjUx4lCVktPAlOVzAXbgMDQeubTdwXuTnPYzELtpggxEx85Dg==
   dependencies:
     "@types/qs" "^6.5.1"
     fetch-ponyfill "^6.0.2"
@@ -8274,14 +8269,6 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.2.tgz#1fcc1495effe08a790909b46bf7b5c4cfeb6f21b"
   integrity sha512-NpznMQoe/DzMG7nJjPkJKT7FdEn9xXfnntG7POfTmqnSaza97ylaBf1luZDh4IgV+vgUoR//id5pf8Ru+Ym+0g==
-
-vue-instagram@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vue-instagram/-/vue-instagram-2.0.1.tgz#cc717ce303d2789ccbcf25a735e2b91d1669223e"
-  integrity sha1-zHF84wPSeJzLzyWnNeK5HRZpIj4=
-  dependencies:
-    browser-jsonp "^1.1.5"
-    lodash "^4.17.4"
 
 vue-loader@^15.6.2:
   version "15.6.4"

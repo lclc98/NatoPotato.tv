@@ -16,7 +16,7 @@
           Loading videos...
         </div>
         <div v-bind:key="index" v-for="(item, index) in youtubePlaylist">
-          <div v-if="index < 3" class="video-wrapper">
+          <div class="video-wrapper">
             <iframe  class="video"
                      :src="`https://www.youtube.com/embed/${item.contentDetails.videoId}`"
                      frameborder="0"
@@ -41,7 +41,10 @@ export default {
     fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=UURuM4_srnCdgGN50IlJxNBQ&key=${process.env.VUE_APP_YOUTUBE_KEY}`)
       .then(value => value.json()
         .then((data) => {
-          if (data.items) this.youtubePlaylist = data.items;
+          if (data.items) {
+            this.youtubePlaylist = data.items;
+            this.youtubePlaylist.length = 3;
+          }
         }));
   },
 };

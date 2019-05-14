@@ -1,8 +1,8 @@
 <template>
   <div class="section">
     <div class="columns">
-      <div class="column is-one-fifth"></div>
-      <div class="column is-three-fifths">
+      <div class="column size15"></div>
+      <div class="column size70">
         <!-- Main container -->
         <nav class="level">
           <!-- Left side -->
@@ -78,21 +78,26 @@
           </header>
           <div class="card-content">
             <div class="columns">
-              <div class="column is-four-fifths">
-                <iframe :src="`https://player.twitch.tv/?channel=${channel}`" frameborder="0" allowfullscreen="true"
-                        scrolling="no" style="height: 100%; width: 100%" muted="true"></iframe>
+              <div class="column container" style="flex: none; width: 75%">
+                <iframe class="video" :src="`https://player.twitch.tv/?channel=${channel}&muted=true`" frameborder="0"
+                        allowfullscreen="true"
+                        scrolling="no" width="100%" height="100%"></iframe>
               </div>
-              <div class="column is-two-fifths">
-                <iframe :src="`https://www.twitch.tv/embed/${channel}/chat`" frameborder="0" scrolling="no"
-                        style="width: 100%;" height="500"></iframe>
+              <div class="column" style="flex: none; width: 25%; padding-top: 0; padding-bottom: 0">
+                <iframe :src="`https://www.twitch.tv/embed/${channel}/chat`" frameborder="0" scrolling="no" width="100%"
+                        height="100%"></iframe>
               </div>
             </div>
           </div>
         </div>
 
+        <br>
         <div class="title is-1">
           SCHEDULE
+          <br>
         </div>
+        <TwitchFeed :channel="channel"></TwitchFeed>
+        <br>
         <div class="columns">
           <div class="column is-one-third">
             <YoutubeVideos></YoutubeVideos>
@@ -101,25 +106,32 @@
             <TwitterFeed></TwitterFeed>
           </div>
           <div class="column is-one-third">
-
+            <InstagramFeed></InstagramFeed>
           </div>
         </div>
       </div>
+      <div class="column size15"></div>
     </div>
-    <div class="column is-one-fifth"></div>
   </div>
 </template>
 
 <script>
 import YoutubeVideos from '../component/YoutubeVideos.vue';
 import TwitterFeed from '../component/TwitterFeed.vue';
+import InstagramFeed from '../component/InstagramFeed.vue';
+import TwitchFeed from '../component/TwitchFeed.vue';
 
 const TwitchClient = require('twitch').default;
 
 let twitchClient;
 export default {
   name: 'home',
-  components: { TwitterFeed, YoutubeVideos },
+  components: {
+    TwitchFeed,
+    InstagramFeed,
+    TwitterFeed,
+    YoutubeVideos,
+  },
   data() {
     return {
       live: false,
@@ -128,8 +140,8 @@ export default {
   },
 
   async mounted() {
-    twitchClient = await TwitchClient.withClientCredentials(process.env.VUE_APP_CLIENT_ID);
-    this.live = await this.isStreamLive(this.channel);
+    twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
+    this.live = this.isStreamLive(this.channel);
   },
   methods: {
     async isStreamLive(userName) {
@@ -144,20 +156,29 @@ export default {
 };
 </script>
 
+<style scoped>
+  .container {
+    width: 100%;
+    padding-top: 41.4444%; /* 16:9 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+  }
 
-<style>
   .video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
   }
 
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
+  .column.size70 {
+    flex: none;
+    width: 70%;
   }
+
+  .column.size15 {
+    flex: none;
+    width: 15%;
+  }
+
 </style>
