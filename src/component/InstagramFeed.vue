@@ -12,12 +12,9 @@
     </header>
     <div class="card-content">
       <div class="content">
-        <div v-bind:key="index" v-for="(shortcode, index) in posts">
+        <div v-bind:key="index" v-for="(item, index) in posts">
           <template v-if="index < 3">
-            <blockquote class="instagram-media" :data-instgrm-permalink="`https://www.instagram.com/p/${shortcode}/`"
-                        data-instgrm-version="12"
-                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-            </blockquote>
+            <div v-html="item"></div>
           </template>
         </div>
       </div>
@@ -26,6 +23,8 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
 export default {
   name: 'InstagramFeed',
 
@@ -33,16 +32,21 @@ export default {
     return { posts: [] };
   },
   mounted() {
-    fetch('https://www.instagram.com/nato____potato/')
+    fetch('https://cors-anywhere.herokuapp.com/https://www.instagram.com/nato____potato/?__a=1', { headers: { 'X-Requested-With': 'fetch' } })
       .then(value => value.text()
         .then((data) => {
-          const jsonPattern = new RegExp(/<script type="text\/javascript">window\._sharedData\s?=(.+);<\/script>/);
-          const arrMatches = data.match(jsonPattern);
-
           const postPattern = new RegExp(/"shortcode":\s*"([0-9a-zA-Z]+)",/g);
 
-          this.posts = this.matchAll(arrMatches[1], postPattern);
-          this.posts.length = 3;
+          const shortcode = this.matchAll(data, postPattern);
+          shortcode.length = 3;
+          for (const index in shortcode) {
+            fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
+              .then(value1 => value1.json()
+                .then((value2) => {
+                  Vue.set(this.posts, index, value2.html);
+                  window.instgrm.Embeds.process();
+                }));
+          }
         }));
   },
   methods: {

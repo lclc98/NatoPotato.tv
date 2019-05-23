@@ -2,7 +2,7 @@
   <div class="card">
     <header class="card-header">
       <p class="card-header-title">
-        Twitch VODS
+        Previous Streams
       </p>
       <a href="#" class="card-header-icon" aria-label="more options">
                   <span class="icon">
@@ -31,26 +31,26 @@
 
 <script>
 
-  const TwitchClient = require('twitch').default;
+const TwitchClient = require('twitch').default;
 
-  let twitchClient;
-  export default {
-    name: 'TwitchFeed',
-    props: ['channel'],
-    data() {
-      return { posts: [] };
-    },
-    async mounted() {
-      twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
-      const user = await twitchClient.helix.users.getUserByName(this.channel);
-      this.posts = await twitchClient.helix.videos.getVideosByUser(user.id, {
-        type: 'archive',
-        first: 3,
-      })
-        .getAll();
-      this.posts.length = 2;
-    },
-  };
+let twitchClient;
+export default {
+  name: 'TwitchFeed',
+  props: ['channel'],
+  data() {
+    return { posts: [] };
+  },
+  async mounted() {
+    twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
+    const user = await twitchClient.helix.users.getUserByName(this.channel);
+    this.posts = await twitchClient.helix.videos.getVideosByUser(user.id, {
+      type: 'archive',
+      first: 3,
+    })
+      .getAll();
+    this.posts.length = 2;
+  },
+};
 </script>
 
 <style scoped>

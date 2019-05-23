@@ -49,7 +49,7 @@
             <div class="column"></div>
             <div class="column is-flex" style="justify-content: center;">
               <figure class="image is-128x128">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="is-rounded" src="../assets/profile.jpg">
               </figure>
             </div>
             <div class="column"></div>
@@ -92,10 +92,9 @@
         </div>
 
         <br>
-        <div class="title is-1">
-          SCHEDULE
-          <br>
-        </div>
+        <Schedule :live="live"></Schedule>
+        <br>
+
         <TwitchFeed :channel="channel"></TwitchFeed>
         <br>
         <div class="columns">
@@ -120,6 +119,7 @@ import YoutubeVideos from '../component/YoutubeVideos.vue';
 import TwitterFeed from '../component/TwitterFeed.vue';
 import InstagramFeed from '../component/InstagramFeed.vue';
 import TwitchFeed from '../component/TwitchFeed.vue';
+import Schedule from '../component/Schedule.vue';
 
 const TwitchClient = require('twitch').default;
 
@@ -127,6 +127,7 @@ let twitchClient;
 export default {
   name: 'home',
   components: {
+    Schedule,
     TwitchFeed,
     InstagramFeed,
     TwitterFeed,
@@ -141,7 +142,7 @@ export default {
 
   async mounted() {
     twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
-    this.live = this.isStreamLive(this.channel);
+    this.live = await this.isStreamLive(this.channel);
   },
   methods: {
     async isStreamLive(userName) {
@@ -149,6 +150,7 @@ export default {
         const user = await twitchClient.helix.users.getUserByName(userName);
         return await twitchClient.helix.streams.getStreamByUserId(user.id);
       } catch (e) {
+        console.log(e);
         return false;
       }
     },
@@ -159,8 +161,8 @@ export default {
 <style scoped>
   .container {
     width: 100%;
-    padding-top: 41.4444%; /* 16:9 Aspect Ratio */
-    position: relative; /* If you want text inside of it */
+    padding-top: 41.4444%;
+    position: relative;
   }
 
   .video {
