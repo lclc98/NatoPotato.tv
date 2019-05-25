@@ -1,9 +1,7 @@
 <template>
   <div class="card">
     <header class="card-header">
-      <p class="card-header-title">
-        Schedule
-      </p>
+      <p class="card-header-title">Schedule</p>
     </header>
     <div class="card-content">
       <div v-if="live" class="has-text-centered">
@@ -49,19 +47,15 @@
         </div>
         <div class="column is-one-third"></div>
       </div>
-      <div class="columns">
-        <div class="column is-one-third"></div>
-        <div class="column is-one-third">
-          <nav class="level">
-            <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
-              <div>
-                <p class="heading has-text-info">{{index.substr(0,3)}}</p>
-                <p class="title is-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
-              </div>
+      <div>
+        <nav class="level">
+          <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
+            <div>
+              <p class="heading has-text-info">{{index.substr(0,3)}}</p>
+              <p class="title is-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
             </div>
-          </nav>
-        </div>
-        <div class="column is-one-third"></div>
+          </div>
+        </nav>
       </div>
     </div>
   </div>

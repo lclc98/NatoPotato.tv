@@ -14,7 +14,7 @@
       <div class="content">
         <div v-bind:key="index" v-for="(item, index) in posts">
           <template v-if="index < 3">
-            <div v-html="item"></div>
+            <div style="width: 100%;" v-html="item"></div>
           </template>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default {
             fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
               .then(value1 => value1.json()
                 .then((value2) => {
-                  Vue.set(this.posts, index, value2.html);
+                  Vue.set(this.posts, index, value2.html.replace('max-width:320px; min-width:326px;', ''));
                   window.instgrm.Embeds.process();
                 }));
           }
