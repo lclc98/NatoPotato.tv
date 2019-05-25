@@ -7,9 +7,11 @@ import Home from './views/Home.vue';
 import './assets/bulmaswatch.min.css';
 
 const vueAwesomeCountdown = require('vue-awesome-countdown').default;
+const VueCookie = require('vue-cookie');
 
 Vue.use(vueAwesomeCountdown);
 Vue.use(Router, Buefy);
+Vue.use(VueCookie);
 
 export default new Router({
   mode: 'history',

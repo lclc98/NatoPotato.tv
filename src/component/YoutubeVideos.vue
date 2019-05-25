@@ -4,20 +4,20 @@
       <p class="card-header-title">
         Youtube Videos
       </p>
-      <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
+      <a @click="showHide" class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
       </a>
     </header>
-    <div class="card-content">
+    <div v-show="show" class="card-content">
       <div class="content">
-        <div v-if="youtubePlaylist.length == 0">
+        <div v-if="youtubePlaylist.length === 0">
           Loading videos...
         </div>
         <div v-bind:key="index" v-for="(item, index) in youtubePlaylist">
           <div class="video-wrapper">
-            <iframe  class="video"
+            <iframe class="video"
                      :src="`https://www.youtube.com/embed/${item.contentDetails.videoId}`"
                      frameborder="0"
                      allowfullscreen></iframe>
@@ -27,15 +27,15 @@
       </div>
     </div>
   </div>
-  <!--  TODO HANDLE COLLAPSING-->
-
 </template>
 
 <script>
 export default {
   name: 'YoutubeVideos',
   data() {
-    return { youtubePlaylist: [] };
+    let show = this.$cookie.get('youtube');
+    show = show === undefined || show === 'true';
+    return { youtubePlaylist: [], show };
   },
   mounted() {
     fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=UURuM4_srnCdgGN50IlJxNBQ&key=${process.env.VUE_APP_YOUTUBE_KEY}`)
@@ -46,6 +46,12 @@ export default {
             this.youtubePlaylist.length = 3;
           }
         }));
+  },
+  methods: {
+    showHide() {
+      this.show = !this.show;
+      this.$cookie.set('youtube', this.show, { expires: '1M' });
+    },
   },
 };
 </script>

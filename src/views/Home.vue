@@ -48,7 +48,7 @@
           <div class="columns">
             <div class="column"></div>
             <div class="column is-flex" style="justify-content: center;">
-              <figure class="image is-128x128">
+              <figure class="image is-256x256">
                 <img class="is-rounded" src="../assets/profile.jpg">
               </figure>
             </div>
@@ -67,12 +67,10 @@
         <br>
         <div v-if="live" class="card">
           <header class="card-header">
-
             <p class="card-header-title">
               <span class="icon has-text-danger">
                 <i class="fas fa-circle"></i>
               </span>
-
               Live
             </p>
           </header>
@@ -181,6 +179,11 @@ export default {
   .column.size15 {
     flex: none;
     width: 15%;
+  }
+
+  .image.is-256x256 {
+    height: 256px;
+    width: 256px;
   }
 
 </style>

@@ -4,13 +4,13 @@
       <p class="card-header-title">
         Previous Streams
       </p>
-      <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
+      <a @click="showHide" class="card-header-icon" aria-label="more options">
+          <span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
       </a>
     </header>
-    <div class="card-content">
+    <div v-show="show" class="card-content">
       <div class="content">
         <div class="columns">
           <template v-for="(item, index) in posts">
@@ -38,7 +38,9 @@ export default {
   name: 'TwitchFeed',
   props: ['channel'],
   data() {
-    return { posts: [] };
+    let show = this.$cookie.get('twitch');
+    show = show === undefined || show === 'true';
+    return { posts: [], show };
   },
   async mounted() {
     twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
@@ -49,6 +51,12 @@ export default {
     })
       .getAll();
     this.posts.length = 2;
+  },
+  methods: {
+    showHide() {
+      this.show = !this.show;
+      this.$cookie.set('twitch', this.show, { expires: '1M' });
+    },
   },
 };
 </script>

@@ -4,13 +4,13 @@
       <p class="card-header-title">
         Instagram
       </p>
-      <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
+      <a @click="showHide" class="card-header-icon" aria-label="more options">
+          <span class="icon">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
       </a>
     </header>
-    <div class="card-content">
+    <div v-show="show" class="card-content">
       <div class="content">
         <div v-bind:key="index" v-for="(item, index) in posts">
           <template v-if="index < 3">
@@ -29,7 +29,9 @@ export default {
   name: 'InstagramFeed',
 
   data() {
-    return { posts: [] };
+    let show = this.$cookie.get('instagram');
+    show = show === undefined || show === 'true';
+    return { posts: [], show };
   },
   mounted() {
     fetch('https://cors-anywhere.herokuapp.com/https://www.instagram.com/nato____potato/?__a=1', { headers: { 'X-Requested-With': 'fetch' } })
@@ -39,7 +41,7 @@ export default {
 
           const shortcode = this.matchAll(data, postPattern);
           shortcode.length = 3;
-          for (const index in shortcode) {
+          for (let index = 0; index < shortcode.length; ++index) {
             fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
               .then(value1 => value1.json()
                 .then((value2) => {
@@ -63,6 +65,11 @@ export default {
         res.push(m[1]);
       }
       return res;
+    },
+    showHide() {
+      this.show = !this.show;
+      this.$cookie.set('instagram', this.show, { expires: '1M' });
+      console.log(this.show);
     },
   },
 };
