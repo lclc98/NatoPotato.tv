@@ -12,7 +12,7 @@
     </header>
     <div v-show="show" class="card-content">
       <div class="content">
-        <Timeline id="NatooPotatoo" sourceType="profile" :options="{ tweetLimit: '3', theme:'dark'}">
+        <Timeline id="NatooPotatoo" sourceType="profile" :options="{ tweetLimit: '3'}">
           Loading twitter...
         </Timeline>
       </div>
@@ -39,7 +39,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

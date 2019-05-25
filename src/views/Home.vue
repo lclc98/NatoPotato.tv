@@ -9,32 +9,32 @@
           <div class="level-left">
             <p class="level-item">
               <a href="https://www.twitch.tv/natopotato">
-                <span class="icon is-large"><i class="fab fa-2x fa-twitch"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-twitch"></i></span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://discord.gg/2QVCUV6">
-                <span class="icon is-large"><i class="fab fa-2x fa-discord"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-discord"></i></span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://twitter.com/NatooPotatoo">
-                <span class="icon is-large"><i class="fab fa-2x fa-twitter"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-twitter"></i></span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.youtube.com/user/NatoPotatoOfficial/">
-                <span class="icon is-large"><i class="fab fa-2x fa-youtube"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-youtube"></i></span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.instagram.com/nato____potato/">
-                <span class="icon is-large"><i class="fab fa-2x fa-instagram"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-instagram"></i></span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.facebook.com/natopotatoofficial/">
-                <span class="icon is-large"><i class="fab fa-2x fa-facebook-square"></i></span>
+                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-facebook-square"></i></span>
               </a>
             </p>
           </div>
@@ -49,13 +49,13 @@
             <div class="column"></div>
             <div class="column is-flex" style="justify-content: center;">
               <figure class="image is-256x256">
-                <img class="is-rounded" src="../assets/profile.jpg">
+                <img class="is-rounded" style="border: 2px solid white;" src="../assets/profile.jpg">
               </figure>
             </div>
             <div class="column"></div>
           </div>
         </div>
-
+        <br>
         <div class="has-text-centered">
           <h1 class="title">NatoPotato</h1>
         </div>

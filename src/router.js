@@ -1,17 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Buefy from 'buefy';
+import VueCookie from 'vue-cookie';
+import VueAwesomeCountdoown from 'vue-awesome-countdown';
 
 import Home from './views/Home.vue';
 
-import './assets/bulmaswatch.min.css';
+import './assets/bulmaswatch.scss';
 
-const vueAwesomeCountdown = require('vue-awesome-countdown').default;
-const VueCookie = require('vue-cookie');
-
-Vue.use(vueAwesomeCountdown);
-Vue.use(Router, Buefy);
+Vue.use(Router);
 Vue.use(VueCookie);
+Vue.use(VueAwesomeCountdoown);
 
 export default new Router({
   mode: 'history',

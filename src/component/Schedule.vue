@@ -20,25 +20,25 @@
             <nav class="level">
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Days</p>
+                  <p class="heading has-text-link">Days</p>
                   <p class="title">{{timeObj.d}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Hours</p>
+                  <p class="heading has-text-link">Hours</p>
                   <p class="title">{{timeObj.h}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Minutes</p>
+                  <p class="heading has-text-link">Minutes</p>
                   <p class="title">{{timeObj.m}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Seconds</p>
+                  <p class="heading has-text-link">Seconds</p>
                   <p class="title">{{timeObj.s}}</p>
                 </div>
               </div>
@@ -56,7 +56,7 @@
           <nav class="level">
             <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
               <div>
-                <p class="heading">{{index.substr(0,3)}}</p>
+                <p class="heading has-text-link">{{index.substr(0,3)}}</p>
                 <p class="title is-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
               </div>
             </div>
