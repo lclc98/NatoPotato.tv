@@ -10,12 +10,11 @@
         </h1>
       </div>
       <div v-else-if="next" class="columns">
-        <div class="column is-one-third"></div>
-        <div class="column is-one-third">
+        <div class="column is-half is-offset-one-quarter">
           <h1 class="title has-text-centered">Live in:</h1>
           <countdown :key="next.toString()" :end-time="next" @onFinish="finish">
           <span slot="process" slot-scope="{ timeObj }">
-            <nav class="level">
+            <nav class="level is-mobile">
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading has-text-info">Days</p>
@@ -45,14 +44,13 @@
             <span slot="finish"></span>
           </countdown>
         </div>
-        <div class="column is-one-third"></div>
       </div>
       <div>
-        <nav class="level">
+        <nav class="level tablet">
           <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
             <div>
               <p class="heading has-text-info">{{index.substr(0,3)}}</p>
-              <p class="title is-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
+              <p class="title is-size-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
             </div>
           </div>
         </nav>

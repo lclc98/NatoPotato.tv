@@ -1,70 +1,73 @@
 <template>
   <div class="section">
-    <div class="columns">
-      <div class="column size15"></div>
-      <div class="column size70">
-        <!-- Main container -->
-        <nav class="level">
-          <!-- Left side -->
+    <div class="columns is-mobile">
+      <div class="column is-eight-tenths is-offset-one-tenth-desktop is-offset-one-tenth-tablet">
+        <nav class="level is-mobile">
           <div class="level-left">
             <p class="level-item">
               <a href="https://www.twitch.tv/natopotato">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-twitch"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-twitch"></i>
+                </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://discord.gg/2QVCUV6">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-discord"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-discord"></i>
+                </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://twitter.com/NatooPotatoo">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-twitter"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-twitter"></i>
+                </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.youtube.com/user/NatoPotatoOfficial/">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-youtube"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-youtube"></i>
+                </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.instagram.com/nato____potato/">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-instagram"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-instagram"></i>
+                </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.facebook.com/natopotatoofficial/">
-                <span class="icon is-large has-text-white"><i class="fab fa-2x fa-facebook-square"></i></span>
+                <span class="icon is-large has-text-white">
+                  <i class="fab fa-2x fa-facebook-square"></i>
+                </span>
               </a>
             </p>
           </div>
-
-          <!-- Right side -->
-          <div class="level-right">
-          </div>
         </nav>
+      </div>
+    </div>
+    <div class="columns is-mobile">
+      <div class="column is-eight-tenths is-offset-one-tenth">
+        <div class="column is-flex" style="justify-content: center;">
+          <figure class="image is-256x256">
+            <img class="is-rounded" style="border: 4px solid white;" src="../assets/profile.jpg">
+          </figure>
+        </div>
 
-        <div class="">
-          <div class="columns">
-            <div class="column"></div>
-            <div class="column is-flex" style="justify-content: center;">
-              <figure class="image is-256x256">
-                <img class="is-rounded" style="border: 4px solid white;" src="../assets/profile.jpg">
-              </figure>
+        <div class="columns is-mobile">
+          <div class="column">
+            <div class="has-text-centered">
+              <h1 class="title">NatoPotato</h1>
             </div>
-            <div class="column"></div>
+            <div class="has-text-centered">
+              <h2 class="subtitle">This is an example bio</h2>
+            </div>
           </div>
         </div>
-        <br>
-        <div class="has-text-centered">
-          <h1 class="title">NatoPotato</h1>
-        </div>
-        <div class="has-text-centered">
-          <h2 class="subtitle">This is an example bio</h2>
-        </div>
-
-        <br>
-        <br>
         <div v-if="live" class="card">
           <header class="card-header">
             <p class="card-header-title">
@@ -89,11 +92,10 @@
           </div>
         </div>
 
-        <br>
         <Schedule :live="live"></Schedule>
         <br>
 
-        <TwitchFeed :channel="channel"></TwitchFeed>
+        <TwitchFeed class="is-hidden-mobile" :channel="channel"></TwitchFeed>
         <br>
         <div class="columns">
           <div class="column is-one-third">
@@ -105,9 +107,8 @@
           <div class="column is-one-third">
             <InstagramFeed></InstagramFeed>
           </div>
-        </div>
+          </div>
       </div>
-      <div class="column size15"></div>
     </div>
   </div>
 </template>
@@ -167,14 +168,25 @@ export default {
     height:100%
   }
 
-  .column.size70 {
+  .column.is-eight-tenths {
     flex: none;
-    width: 70%;
+    width: 80%;
   }
 
-  .column.size15 {
-    flex: none;
-    width: 15%;
+  @media screen and (min-width: 769px), print {
+    .column.is-offset-one-tenth-tablet {
+      margin-left: 10%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .column.is-offset-one-tenth-desktop {
+      margin-left: 10%;
+    }
+  }
+
+  .column.is-offset-one-tenth {
+    margin-left: 10%;
   }
 
   .image.is-256x256 {

@@ -45,7 +45,7 @@ export default {
             fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
               .then(value1 => value1.json()
                 .then((value2) => {
-                  Vue.set(this.posts, index, value2.html.replace('max-width:320px; min-width:326px;', ''));
+                  Vue.set(this.posts, index, value2.html.replace('max-width:320px;', '').replace('min-width:326px;', ''));
                   window.instgrm.Embeds.process();
                 }));
           }
@@ -73,3 +73,8 @@ export default {
   },
 };
 </script>
+<style>
+  .instagram-media {
+    min-width: 0 !important;
+  }
+</style>
