@@ -69,7 +69,6 @@ export default {
     showHide() {
       this.show = !this.show;
       this.$cookie.set('instagram', this.show, { expires: '1M' });
-      console.log(this.show);
     },
   },
 };

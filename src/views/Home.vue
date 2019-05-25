@@ -49,7 +49,7 @@
             <div class="column"></div>
             <div class="column is-flex" style="justify-content: center;">
               <figure class="image is-256x256">
-                <img class="is-rounded" style="border: 2px solid white;" src="../assets/profile.jpg">
+                <img class="is-rounded" style="border: 4px solid white;" src="../assets/profile.jpg">
               </figure>
             </div>
             <div class="column"></div>
@@ -83,7 +83,7 @@
               </div>
               <div class="column" style="flex: none; width: 25%; padding-top: 0; padding-bottom: 0">
                 <iframe :src="`https://www.twitch.tv/embed/${channel}/chat`" frameborder="0" scrolling="no" width="100%"
-                        height="100%"></iframe>
+                        height="100%" style="height:100%"></iframe>
               </div>
             </div>
           </div>
@@ -121,7 +121,6 @@ import Schedule from '../component/Schedule.vue';
 
 const TwitchClient = require('twitch').default;
 
-let twitchClient;
 export default {
   name: 'home',
   components: {
@@ -138,20 +137,16 @@ export default {
     };
   },
 
-  async mounted() {
-    twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
-    this.live = await this.isStreamLive(this.channel);
-  },
-  methods: {
-    async isStreamLive(userName) {
-      try {
-        const user = await twitchClient.helix.users.getUserByName(userName);
-        return await twitchClient.helix.streams.getStreamByUserId(user.id);
-      } catch (e) {
-        console.log(e);
-        return false;
-      }
-    },
+  mounted() {
+    TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID).then((twitchClient) => {
+      twitchClient.helix.users.getUserByName(this.channel).then((user) => {
+        if (user) {
+          twitchClient.helix.streams.getStreamByUserId(user.id).then((stream) => {
+            this.live = stream != null;
+          });
+        }
+      });
+    });
   },
 };
 </script>
@@ -169,6 +164,7 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
+    height:100%
   }
 
   .column.size70 {

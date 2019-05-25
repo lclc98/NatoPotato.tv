@@ -45,11 +45,7 @@ export default {
   async mounted() {
     twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
     const user = await twitchClient.helix.users.getUserByName(this.channel);
-    this.posts = await twitchClient.helix.videos.getVideosByUser(user.id, {
-      type: 'archive',
-      first: 3,
-    })
-      .getAll();
+    this.posts = await twitchClient.helix.videos.getVideosByUser(user.id, { type: 'archive', first: 2 }).getAll();
     this.posts.length = 2;
   },
   methods: {

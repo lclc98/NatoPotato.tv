@@ -60,6 +60,13 @@ $link-focus: darken($link, 5);
 $link-active: darken($link, 5);
 $link-focus-border: $grey-light;
 
+$info: #ffca50;
+$info-hover: lighten($info, 5);
+$info-focus: darken($info, 5);
+$info-active: darken($info, 5);
+$info-focus-border: $grey-light;
+
+
 $button-color: $primary;
 $button-hover-color: darken($text, 5); // text-dark
 $button-focus: darken($text, 5); // text-dark

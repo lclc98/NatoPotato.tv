@@ -20,25 +20,25 @@
             <nav class="level">
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading has-text-link">Days</p>
+                  <p class="heading has-text-info">Days</p>
                   <p class="title">{{timeObj.d}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading has-text-link">Hours</p>
+                  <p class="heading has-text-info">Hours</p>
                   <p class="title">{{timeObj.h}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading has-text-link">Minutes</p>
+                  <p class="heading has-text-info">Minutes</p>
                   <p class="title">{{timeObj.m}}</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading has-text-link">Seconds</p>
+                  <p class="heading has-text-info">Seconds</p>
                   <p class="title">{{timeObj.s}}</p>
                 </div>
               </div>
@@ -49,14 +49,13 @@
         </div>
         <div class="column is-one-third"></div>
       </div>
-      <br>
       <div class="columns">
         <div class="column is-one-third"></div>
         <div class="column is-one-third">
           <nav class="level">
             <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
               <div>
-                <p class="heading has-text-link">{{index.substr(0,3)}}</p>
+                <p class="heading has-text-info">{{index.substr(0,3)}}</p>
                 <p class="title is-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
               </div>
             </div>
