@@ -10,47 +10,49 @@
         </h1>
       </div>
       <div v-else-if="next" class="columns">
-        <div class="column is-half is-offset-one-quarter">
+        <div class="column is-half-desktop is-offset-one-quarter-desktop is-full-mobile">
           <h1 class="title has-text-centered">Live in:</h1>
           <countdown :key="next.toString()" :end-time="next" @onFinish="finish">
-          <span slot="process" slot-scope="{ timeObj }">
-            <nav class="level is-mobile">
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading has-text-info">Days</p>
-                  <p class="title">{{timeObj.d}}</p>
+            <span slot="process" slot-scope="{ timeObj }">
+              <nav class="level is-mobile has-text-centered is-centered">
+                <div class="level-item">
+                  <div>
+                    <p class="heading has-text-info">Days</p>
+                    <p class="title">{{timeObj.d}}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading has-text-info">Hours</p>
-                  <p class="title">{{timeObj.h}}</p>
+                <div class="level-item">
+                  <div>
+                    <p class="heading has-text-info">Hours</p>
+                    <p class="title">{{timeObj.h}}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading has-text-info">Minutes</p>
-                  <p class="title">{{timeObj.m}}</p>
+                <div class="level-item">
+                  <div>
+                    <p class="heading has-text-info">Minutes</p>
+                    <p class="title">{{timeObj.m}}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading has-text-info">Seconds</p>
-                  <p class="title">{{timeObj.s}}</p>
+                <div class="level-item">
+                  <div>
+                    <p class="heading has-text-info">Seconds</p>
+                    <p class="title">{{timeObj.s}}</p>
+                  </div>
                 </div>
-              </div>
-            </nav>
-          </span>
+              </nav>
+            </span>
             <span slot="finish"></span>
           </countdown>
         </div>
       </div>
       <div>
         <nav class="level tablet">
-          <div class="level-item has-text-centered is-vertical" v-for="(item, index) in schedule" v-bind:key="index">
+          <div class="level-item has-text-centered" v-for="(item, i) in schedule" v-bind:key="i">
             <div>
-              <p class="heading has-text-info">{{index.substr(0,3)}}</p>
-              <p class="title is-size-6" v-for="(time, index) in item" v-bind:key="index">{{time}}</p>
+              <p class="heading has-text-info">{{i.substr(0,3)}}</p>
+              <p class="title is-size-6" v-for="(time, index) in item" v-bind:key="index">
+                {{time}}
+              </p>
             </div>
           </div>
         </nav>
@@ -120,3 +122,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .is-full-mobile {
+    padding: 0;
+  }
+</style>
