@@ -4,45 +4,64 @@
       <div class="column is-eight-tenths is-offset-one-tenth-desktop is-offset-one-tenth-tablet">
         <nav class="level is-mobile">
           <div class="level-left">
-            <p class="level-item">
-              <a href="https://www.twitch.tv/natopotato">
-                <span class="icon is-large has-text-white">
+            <p class="level-item ">
+              <a class="is-hidden-touch" href="https://www.twitch.tv/natopotato">
+                <span class="icon is-medium has-text-white">
+                  <i class="fab fa-2x fa-twitch"></i>
+                </span>
+              </a>
+              <a class="is-hidden-desktop" href="twitch://stream/natopotato">
+                <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-twitch"></i>
                 </span>
               </a>
             </p>
             <p class="level-item">
-              <a href="https://discord.gg/2QVCUV6">
-                <span class="icon is-large has-text-white">
-                  <i class="fab fa-2x fa-discord"></i>
-                </span>
-              </a>
-            </p>
-            <p class="level-item">
-              <a href="https://twitter.com/NatooPotatoo">
-                <span class="icon is-large has-text-white">
-                  <i class="fab fa-2x fa-twitter"></i>
-                </span>
-              </a>
-            </p>
-            <p class="level-item">
               <a href="https://www.youtube.com/user/NatoPotatoOfficial/">
-                <span class="icon is-large has-text-white">
+                <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-youtube"></i>
                 </span>
               </a>
             </p>
             <p class="level-item">
+              <a href="https://twitter.com/NatooPotatoo">
+                <span class="icon is-medium has-text-white">
+                  <i class="fab fa-2x fa-twitter"></i>
+                </span>
+              </a>
+            </p>
+            <p class="level-item">
               <a href="https://www.instagram.com/nato____potato/">
-                <span class="icon is-large has-text-white">
+                <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-instagram"></i>
                 </span>
               </a>
             </p>
             <p class="level-item">
               <a href="https://www.facebook.com/natopotatoofficial/">
-                <span class="icon is-large has-text-white">
+                <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-facebook-square"></i>
+                </span>
+              </a>
+            </p>
+            <p class="level-item">
+              <a href="https://discord.gg/2QVCUV6">
+                <span class="icon is-medium has-text-white">
+                  <i class="fab fa-2x fa-discord"></i>
+                </span>
+              </a>
+            </p>
+            <p class="level-item">
+              <a href="https://shop.spreadshirt.com/natopotato">
+                <span class="icon is-medium has-text-white">
+                  <i class="fas fa-2x fa-tshirt"></i>
+                </span>
+              </a>
+            </p>
+            <p class="level-item">
+              <a href="mailto:natopotato.official@gmail.com">
+                <span class="icon is-medium has-text-white">
+                  <i class="fas fa-2x fa-envelope"></i>
                 </span>
               </a>
             </p>
