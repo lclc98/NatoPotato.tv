@@ -57,6 +57,10 @@
           </div>
         </nav>
       </div>
+      <br>
+      <div v-if="timezone" class="has-text-centered">
+        {{timezone}}
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +78,7 @@ export default {
     return {
       schedule: {},
       next: undefined,
+      timezone: undefined,
     };
   },
   mounted() {
@@ -114,6 +119,7 @@ export default {
         }
       });
       this.next = nextLive.toDate();
+      this.timezone = moment.tz.guess(true);
     },
     finish() {
       this.schedule = {};

@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="columns is-mobile">
-      <div class="column is-eight-tenths is-offset-one-tenth">
+      <div class="column is-eight-tenths-desktop is-offset-one-tenth-desktop is-full-touch">
         <div class="column is-flex" style="justify-content: center;">
           <figure class="image is-256x256">
             <img class="is-rounded" style="border: 4px solid white;" src="../assets/profile.jpg">
@@ -199,6 +199,11 @@ export default {
   }
 
   @media screen and (min-width: 1024px) {
+    .column.is-eight-tenths-desktop {
+      flex: none;
+      width: 80%;
+    }
+
     .column.is-offset-one-tenth-desktop {
       margin-left: 10%;
     }
