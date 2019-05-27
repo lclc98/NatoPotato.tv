@@ -39,7 +39,7 @@ export default {
   props: ['channel'],
   data() {
     let show = this.$cookie.get('twitch');
-    show = show === undefined || show === 'true';
+    show = show === null || show === 'true';
     return { posts: [], show };
   },
   async mounted() {

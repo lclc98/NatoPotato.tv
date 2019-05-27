@@ -30,7 +30,7 @@ export default {
 
   data() {
     let show = this.$cookie.get('instagram');
-    show = show === undefined || show === 'true';
+    show = show === null || show === 'true';
     return { posts: [], show };
   },
   mounted() {

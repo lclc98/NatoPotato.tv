@@ -28,7 +28,7 @@ export default {
   components: { Timeline },
   data() {
     let show = this.$cookie.get('twitter');
-    show = show === undefined || show === 'true';
+    show = show === null || show === 'true';
     return { show };
   },
   methods: {

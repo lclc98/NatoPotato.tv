@@ -34,7 +34,7 @@ export default {
   name: 'YoutubeVideos',
   data() {
     let show = this.$cookie.get('youtube');
-    show = show === undefined || show === 'true';
+    show = show === null || show === 'true';
     return { youtubePlaylist: [], show };
   },
   mounted() {
