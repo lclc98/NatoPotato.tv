@@ -1,5 +1,5 @@
 {
-  "name": "followteam",
+  "name": "natopotatofo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "vue": "^2.6.6",
     "vue-awesome-countdown": "^1.0.13",
     "vue-cookie": "^1.1.4",
+    "vue-meta": "^1.6.0",
     "vue-router": "^3.0.1",
     "vue-tweet-embed": "^2.3.0",
     "vuex": "^3.0.1"

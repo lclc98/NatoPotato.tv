@@ -59,7 +59,7 @@
       </div>
       <br>
       <div v-if="timezone" class="has-text-centered">
-        {{timezone}}
+        Times shown in {{timezone}}
       </div>
     </div>
   </div>

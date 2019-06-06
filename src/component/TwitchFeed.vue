@@ -15,11 +15,11 @@
         <div class="columns">
           <template v-for="(item, index) in posts">
             <div v-bind:key="index" class="column is-half">
-              <div class="container">
-                <iframe class="video"
+              <div class="aspect-ratio">
+                <iframe class="aspect-ratio"
                         :src="`https://player.twitch.tv/?video=v${item._data.url.replace('https://www.twitch.tv/videos/','')}&autoplay=false`"
                         allowfullscreen="true"
-                        scrolling="no" width="100%" height="100%"></iframe>
+                        scrolling="no"></iframe>
               </div>
             </div>
           </template>
@@ -56,21 +56,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .container {
-    width: 100%;
-    padding-top: 60%; /* 16:9 Aspect Ratio */
-    position: relative; /* If you want text inside of it */
-  }
-
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding-bottom: 15px;
-    height: 100%;
-  }
-</style>

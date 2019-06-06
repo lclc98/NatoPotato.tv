@@ -5,11 +5,11 @@
         <nav class="level is-mobile">
           <div class="level-left">
             <p class="level-item ">
-              <a class="is-hidden-touch" href="https://www.twitch.tv/natopotato">
+              <router-link class="is-hidden-touch" to="/live">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-twitch"></i>
                 </span>
-              </a>
+              </router-link>
               <a class="is-hidden-desktop" href="twitch://stream/natopotato">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-twitch"></i>
@@ -17,32 +17,32 @@
               </a>
             </p>
             <p class="level-item">
-              <a href="https://www.youtube.com/user/NatoPotatoOfficial/">
+              <router-link to="/youtube">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-youtube"></i>
                 </span>
-              </a>
+              </router-link>
             </p>
             <p class="level-item">
-              <a href="https://twitter.com/NatooPotatoo">
+              <router-link to="/twitter">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-twitter"></i>
                 </span>
-              </a>
+              </router-link>
             </p>
             <p class="level-item">
-              <a href="https://www.instagram.com/nato____potato/">
+              <router-link to="/instagram">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-instagram"></i>
                 </span>
-              </a>
+              </router-link>
             </p>
             <p class="level-item">
-              <a href="https://www.facebook.com/natopotatoofficial/">
+              <router-link to="/facebook">
                 <span class="icon is-medium has-text-white">
                   <i class="fab fa-2x fa-facebook-square"></i>
                 </span>
-              </a>
+              </router-link>
             </p>
             <p class="level-item">
               <a href="https://discord.gg/2QVCUV6">
@@ -52,11 +52,11 @@
               </a>
             </p>
             <p class="level-item">
-              <a href="https://shop.spreadshirt.com/natopotato">
+              <router-link to="/merch">
                 <span class="icon is-medium has-text-white">
                   <i class="fas fa-2x fa-tshirt"></i>
                 </span>
-              </a>
+              </router-link>
             </p>
             <p class="level-item">
               <a href="mailto:natopotato.official@gmail.com">
@@ -96,7 +96,7 @@
           </div>
           <div class="column is-one-fifth-tablet"></div>
         </div>
-        <div v-if="live" class="card">
+        <div v-if="live" class="card is-hidden-mobile">
           <header class="card-header">
             <p class="card-header-title">
               <span class="icon has-text-danger">
