@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Meta from 'vue-meta';
 import Router from 'vue-router';
 import VueCookie from 'vue-cookie';
-import AspectRatio from 'v-aspect-ratio';
 import VueAwesomeCountdoown from 'vue-awesome-countdown';
 
 import Home from './views/Home.vue';
@@ -12,7 +11,6 @@ import UniteTV from './views/UniteTV.vue';
 
 import './assets/bulmaswatch.scss';
 
-Vue.use(AspectRatio);
 Vue.use(Meta);
 Vue.use(Router);
 Vue.use(VueCookie);
