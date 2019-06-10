@@ -17,7 +17,7 @@
       <div v-else-if="next" class="columns">
         <div class="column is-half-desktop is-offset-one-quarter-desktop is-full-mobile">
           <h1 class="title has-text-centered">Live in:</h1>
-          <countdown :key="next.toString()" :end-time="next" @onFinish="finish">
+          <countdown :key="next" :left-time="next" @onFinish="finish">
             <span slot="process" slot-scope="{ timeObj }">
               <nav class="level is-mobile has-text-centered is-centered">
                 <div class="level-item">
@@ -72,7 +72,10 @@
 
 <script>
 import Vue from 'vue';
-import moment from 'moment-timezone';
+import {
+  DateTimeFormatter, DayOfWeek, LocalDate, LocalTime, ZonedDateTime, ZoneId, ChronoUnit,
+} from 'js-joda';
+import 'js-joda-timezone';
 
 const schedule = require('../assets/schedule.json');
 
@@ -92,39 +95,42 @@ export default {
   methods: {
     handleTime() {
       const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-      const now = moment.tz(moment.tz.guess());
-      let nextLive = moment.tz(moment.tz.guess())
-        .add(1, 'months');
-
+      const now = ZonedDateTime.now();
+      let nextLive = ZonedDateTime.now()
+        .plusMonths(1);
+      const timezone = ZoneId.systemDefault();
       days.forEach((day) => {
         if (schedule.enabled[day]) {
-          schedule[day].forEach((hour) => {
-            const data = moment.tz({
-              h: hour.HH,
-              m: hour.mm,
-            }, schedule.timezone)
-              .day(day);
-            let converted = data.tz(moment.tz.guess());
-            if (converted.diff(now) < 0) {
-              converted = converted.add(1, 'weeks');
+          schedule[day].forEach((time) => {
+            const x = DayOfWeek.valueOf(day.toUpperCase());
+            let data = ZonedDateTime.of(LocalDate.now(), LocalTime.of(time.HH, time.mm), ZoneId.of(schedule.timezone));
+            const dd = data.dayOfWeek().value();
+            if (dd > x.value()) {
+              data = data.minusDays(dd - x.value());
+            } else {
+              data = data.plusDays(x.value() - dd);
             }
-            if (converted.diff(now) < nextLive.diff(now)) {
+            let converted = data.withZoneSameInstant(timezone);
+            if (converted.isBefore(now)) {
+              converted = converted.plusWeeks(1);
+            }
+            if (now.until(converted, ChronoUnit.MILLIS) < now.until(nextLive, ChronoUnit.MILLIS)) {
               nextLive = converted;
             }
-
-            const dayName = days[converted.get('day')];
+            const dayName = converted.dayOfWeek()
+              .name();
             let dayData = this.schedule[dayName];
             if (!dayData) {
               dayData = [];
             }
-            dayData.push(converted.format('hh:mm A'));
+            dayData.push(`${converted.format(DateTimeFormatter.ofPattern('hh:mm'))} ${converted.hour() > 12 ? 'PM' : 'AM'}`);
 
             Vue.set(this.schedule, dayName, dayData);
           });
         }
       });
-      this.next = nextLive.toDate();
-      this.timezone = moment.tz.guess(true);
+      this.next = now.until(nextLive, ChronoUnit.MILLIS);
+      this.timezone = timezone.toString();
     },
     finish() {
       this.schedule = {};

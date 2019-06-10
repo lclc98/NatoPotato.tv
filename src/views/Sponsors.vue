@@ -21,7 +21,8 @@
                 Of course you do!
               </p>
               <pre class="preline is-family-primary">
-                Check out MVMT for their extensive range of premium mens/womens watches, glasses & sunglasses.
+                Check out MVMT for their extensive range of premium mens/womens watches,
+                glasses & sunglasses.
 
                 Use the code "natopotato" at checkout for 15% discount or click <a href="http://bit.ly/2GD76Ip">here</a>
 
@@ -48,7 +49,9 @@
             </div>
 
             <div class="content">
-              <p>Thanks to Logitech G and ASTRO Gaming we use nothing but THE finest in gaming and streaming peripherals.</p>
+              <p>Thanks to Logitech G and ASTRO Gaming we use nothing but THE finest in gaming
+                and streaming peripherals.
+              </p>
 
               <h6 class="title is-6">Gaming PC:</h6>
               <pre class="preline is-family-primary">

@@ -5,13 +5,13 @@ import VueCookie from 'vue-cookie';
 import VueAnalytics from 'vue-analytics';
 import VueAwesomeCountdoown from 'vue-awesome-countdown';
 
-import Home from './views/Home.vue';
-// import Specs from './views/Specs.vue';
-import UniteTV from './views/UniteTV.vue';
-import Sponsors from './views/Sponsors.vue';
-import Redirect from './views/Redirect.vue';
-
 import './assets/style.scss';
+
+// import Specs from './views/Specs.vue';
+const Home = () => import(/* webpackChunkName: "home" */ './views/Home.vue');
+const UniteTV = () => import(/* webpackChunkName: "unitetv" */ './views/UniteTV.vue');
+const Sponsors = () => import(/* webpackChunkName: "sponsors" */ './views/Sponsors.vue');
+const Redirect = () => import(/* webpackChunkName: "redirect" */ './views/Redirect.vue');
 
 const router = new Router({
   mode: 'history',

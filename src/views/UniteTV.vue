@@ -60,9 +60,12 @@
             <br>
             <h6 class="title is-3">UniteTV</h6>
             <pre class="preline is-family-primary">
-              Welcome to UniteTV, we are more than a stream team, we are an established loving community of friends and family, run by you guys!
+              Welcome to UniteTV, we are more than a stream team, we are an established loving
+              community of friends and family, run by you guys!
 
-              I have created UniteTV for the soul purpose to give back to you all and to provide you a place where you can make friends, grow your channel with like minded streamers and most importantly, belong.
+              I have created UniteTV for the soul purpose to give back to you all and to provide
+              you a place where you can make friends, grow your channel with like minded streamers
+              and most importantly, belong.
 
               <a class="is-size-6 has-text-weight-bold" href="https://goo.gl/forms/DRbjdL3ZjrM0G7hB3">APPLY</a>
 
@@ -123,6 +126,7 @@ export default {
       .map((key) => {
         const value = teamUsers[key];
         return {
+          // eslint-disable-next-line no-underscore-dangle
           userId: value._id,
           username: value.name,
           displayName: value.display_name,

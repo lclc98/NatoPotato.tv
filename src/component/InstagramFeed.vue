@@ -41,7 +41,7 @@ export default {
 
           const shortcode = this.matchAll(data, postPattern);
           shortcode.length = 3;
-          for (let index = 0; index < shortcode.length; ++index) {
+          for (let index = 0; index < shortcode.length; index += 1) {
             fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
               .then(value1 => value1.json()
                 .then((value2) => {
@@ -55,13 +55,8 @@ export default {
     matchAll(str, regex) {
       const res = [];
       let m;
-      if (regex.global) {
-        // eslint-disable-next-line no-cond-assign
-        while (m = regex.exec(str)) {
-          res.push(m[1]);
-        }
-        // eslint-disable-next-line no-cond-assign
-      } else if (m = regex.exec(str)) {
+      // eslint-disable-next-line no-cond-assign
+      while (m = regex.exec(str)) {
         res.push(m[1]);
       }
       return res;

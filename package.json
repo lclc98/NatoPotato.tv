@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "bulma": "git://github.com/jgthms/bulma#ff17a85faa",
-    "moment-timezone": "^0.5.25",
+    "js-joda": "^1.10.1",
+    "js-joda-timezone": "2.0.1",
     "twitch": "^3.0.0-pre.4",
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.0",

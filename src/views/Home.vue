@@ -139,18 +139,18 @@
           <div class="column is-one-third">
             <InstagramFeed></InstagramFeed>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import YoutubeVideos from '../component/YoutubeVideos.vue';
-import TwitterFeed from '../component/TwitterFeed.vue';
-import InstagramFeed from '../component/InstagramFeed.vue';
-import TwitchFeed from '../component/TwitchFeed.vue';
-import Schedule from '../component/Schedule.vue';
+const YoutubeVideos = () => import(/* webpackChunkName: "youtube" */ '../component/YoutubeVideos.vue');
+const TwitterFeed = () => import(/* webpackChunkName: "twitter" */ '../component/TwitterFeed.vue');
+const InstagramFeed = () => import(/* webpackChunkName: "instagram" */ '../component/InstagramFeed.vue');
+const TwitchFeed = () => import(/* webpackChunkName: "twitch" */ '../component/TwitchFeed.vue');
+const Schedule = () => import(/* webpackChunkName: "schedule" */ '../component/Schedule.vue');
 
 const TwitchClient = require('twitch').default;
 
