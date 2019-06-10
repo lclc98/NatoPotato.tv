@@ -107,10 +107,14 @@
           </header>
           <div class="card-content">
             <div class="columns">
-              <div class="column container" style="flex: none; width: 75%">
-                <iframe class="video" :src="`https://player.twitch.tv/?channel=${channel}&muted=true`" frameborder="0"
-                        allowfullscreen="true"
-                        scrolling="no" width="100%" height="100%"></iframe>
+              <div class="column">
+                <div class="aspect-ratio">
+                  <iframe class="aspect-ratio" :src="`https://player.twitch.tv/?channel=${channel}&muted=true`"
+                          frameborder="0"
+                          allowfullscreen="true"
+                          scrolling="no">
+                  </iframe>
+                </div>
               </div>
               <div class="column" style="flex: none; width: 25%; padding-top: 0; padding-bottom: 0">
                 <iframe :src="`https://www.twitch.tv/embed/${channel}/chat`" frameborder="0" scrolling="no" width="100%"
@@ -119,8 +123,8 @@
             </div>
           </div>
         </div>
-
-        <Schedule :live="live"></Schedule>
+        <br>
+        <Schedule :live="live" :channel="channel"></Schedule>
         <br>
 
         <TwitchFeed class="is-hidden-mobile" :channel="channel"></TwitchFeed>
@@ -159,6 +163,16 @@ export default {
     TwitterFeed,
     YoutubeVideos,
   },
+  metaInfo: {
+    title: 'Home',
+    titleTemplate: titleChunk => (titleChunk ? `${titleChunk} - NatoPotato` : 'NatoPotato'),
+    meta: [
+      { vmid: 'description', name: 'description', content: 'I am a 25 E-Boy from Perth, Western Australia with a passion for games and entertaining, I have a beautiful fiancé and a feather baby named Alfie.' },
+    ],
+    htmlAttrs: {
+      lang: 'en',
+    },
+  },
   data() {
     return {
       live: false,
@@ -181,21 +195,6 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    width: 100%;
-    padding-top: 41.4444%;
-    position: relative;
-  }
-
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height:100%
-  }
-
   .column.is-eight-tenths {
     flex: none;
     width: 80%;

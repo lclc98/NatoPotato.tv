@@ -6,8 +6,8 @@
           <div class="card-content" style="position: absolute; width: 100%">
             <template v-for="(item, index) in users">
               <div class="box has-pointer"
+                   :class="index === selected?'has-box-select':''"
                    v-bind:key="index"
-                   :style="index === selected?'background-color:#000;':''"
                    @click="onUserClick(index)">
                 <article class="level">
                   <div class="level-left">
@@ -57,23 +57,23 @@
                 allowfullscreen="true">
               </iframe>
             </div>
+            <br>
+            <h6 class="title is-3">UniteTV</h6>
+            <pre class="preline is-family-primary">
+              Welcome to UniteTV, we are more than a stream team, we are an established loving community of friends and family, run by you guys!
+
+              I have created UniteTV for the soul purpose to give back to you all and to provide you a place where you can make friends, grow your channel with like minded streamers and most importantly, belong.
+
+              <a class="is-size-6 has-text-weight-bold" href="https://goo.gl/forms/DRbjdL3ZjrM0G7hB3">APPLY</a>
+
+              UniteTV is run through Nato’s discord which you can find <a class="is-size-6 has-text-weight-bold" href="https://discord.gg/rTHmTdz">here</a>
+
+              Thank you all for absolutely everything you do, it means the world to me!
+
+              Love NatoPotato.
+            </pre>
           </div>
         </div>
-        <pre style="white-space: pre-line;" class="is-family-primary">
-          <b>UniteTV</b>
-
-          Welcome to UniteTV, we are more than a stream team, we are an established loving community of friends and family, run by you guys!
-
-          I have created UniteTV for the soul purpose to give back to you all and to provide you a place where you can make friends, grow your channel with like minded streamers and most importantly, belong.
-
-          <a href="https://goo.gl/forms/DRbjdL3ZjrM0G7hB3">APPLY</a>
-
-          UniteTV is run through Nato’s discord which you can find <a href="https://discord.gg/rTHmTdz">here</a>
-
-          Thank you all for absolutely everything you do, it means the world to me!
-
-          Love NatoPotato.
-        </pre>
       </div>
     </div>
     <br>
@@ -87,6 +87,19 @@ let twitchClient;
 
 export default {
   name: 'UniteTV',
+  metaInfo: {
+    title: 'UniteTV',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'A stream team',
+      },
+    ],
+    htmlAttrs: {
+      lang: 'en',
+    },
+  },
   data() {
     return {
       users: {},
@@ -164,7 +177,7 @@ export default {
 </script>
 
 <style scoped>
-  .has-pointer{
-    cursor: pointer;
+  .has-box-select {
+    background-color: #014963;
   }
 </style>

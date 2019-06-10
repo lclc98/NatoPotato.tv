@@ -10,27 +10,25 @@
   "dependencies": {
     "bulma": "git://github.com/jgthms/bulma#ff17a85faa",
     "moment-timezone": "^0.5.25",
-    "node-sass": "^4.12.0",
-    "twitch": "^3.0.0-pre.3",
-    "vue": "^2.6.6",
-    "vue-awesome-countdown": "^1.0.13",
+    "twitch": "^3.0.0-pre.4",
+    "vue": "^2.6.10",
+    "vue-analytics": "^5.17.0",
+    "vue-awesome-countdown": "^1.0.14",
     "vue-cookie": "^1.1.4",
     "vue-meta": "^1.6.0",
-    "vue-router": "^3.0.1",
-    "vue-tweet-embed": "^2.3.0",
-    "vuex": "^3.0.1"
+    "vue-router": "^3.0.6",
+    "vue-tweet-embed": "^2.3.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "fibers": "^3.1.1",
-    "sass": "^1.16.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "sass": "^1.21.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   }
 }

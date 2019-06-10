@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <div class="columns is-mobile">
+    <div class="columns">
       <div class="column is-offset-one-quarter-desktop is-one-quarter-desktop">
         <div class="card">
           <div class="card-image">
@@ -57,7 +57,6 @@
                 Keyboard: <a href="https://www.logitechg.com/products/gaming-keyboards/g910-orion-spectrum-rgb-gaming-keyboard.html">Logitech G910</a>
                 Headset: <a href="https://www.astrogaming.com/headsets/A50-GEN3.html?psids=3AS52-AGW9N-510%2CMOD-KIT-A50">ASTRO A50</a>
               </pre>
-              <!-- TODO CHECK IF WHOLE PRODUCT NAME IS NEEDED -->
               <h6 class="title is-6">Stream PC:</h6>
               <pre class="preline is-family-primary">
                 Mouse: <a href="https://www.logitechg.com/products/gaming-mice/g502-hero-gaming-mouse.html">Logitech G502 Hero</a>
@@ -80,13 +79,17 @@
 <script>
 export default {
   name: 'Sponsors',
+  metaInfo: {
+    title: 'Sponsors',
+    htmlAttrs: {
+      lang: 'en',
+    },
+  },
 };
 </script>
 
-<!--TODO ADD VISUAL MARKER FOR ANCHOR TAGS-->
 <style scoped>
-  .preline {
-    white-space: pre-line;
-    padding: 0;
+  .media-content{
+    overflow-y: hidden;
   }
 </style>

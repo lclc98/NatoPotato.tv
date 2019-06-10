@@ -6,7 +6,12 @@
     <div class="card-content">
       <div v-if="live" class="has-text-centered">
         <h1 class="title">
-          <span class="icon has-text-danger"><i class="fas fa-circle"></i></span> NOW LIVE
+          <router-link class="is-hidden-touch" to="/live">
+            <span class="icon has-text-danger"><i class="fas fa-circle"></i></span> NOW LIVE
+          </router-link>
+          <a class="is-hidden-desktop" href="twitch://stream/natopotato">
+            <span class="icon has-text-danger"><i class="fas fa-circle"></i></span> NOW LIVE
+          </a>
         </h1>
       </div>
       <div v-else-if="next" class="columns">
@@ -17,25 +22,25 @@
               <nav class="level is-mobile has-text-centered is-centered">
                 <div class="level-item">
                   <div>
-                    <p class="heading has-text-info">Days</p>
+                    <p class="heading is-uppercase has-text-info">Days</p>
                     <p class="title">{{timeObj.d}}</p>
                   </div>
                 </div>
                 <div class="level-item">
                   <div>
-                    <p class="heading has-text-info">Hours</p>
+                    <p class="heading is-uppercase has-text-info">Hours</p>
                     <p class="title">{{timeObj.h}}</p>
                   </div>
                 </div>
                 <div class="level-item">
                   <div>
-                    <p class="heading has-text-info">Minutes</p>
+                    <p class="heading is-uppercase has-text-info">Minutes</p>
                     <p class="title">{{timeObj.m}}</p>
                   </div>
                 </div>
                 <div class="level-item">
                   <div>
-                    <p class="heading has-text-info">Seconds</p>
+                    <p class="heading is-uppercase has-text-info">Seconds</p>
                     <p class="title">{{timeObj.s}}</p>
                   </div>
                 </div>
@@ -49,7 +54,7 @@
         <nav class="level tablet">
           <div class="level-item has-text-centered" v-for="(item, i) in schedule" v-bind:key="i">
             <div>
-              <p class="heading has-text-info">{{i.substr(0,3)}}</p>
+              <p class="heading is-uppercase has-text-info">{{i.substr(0,3)}}</p>
               <p class="title is-size-6" v-for="(time, index) in item" v-bind:key="index">
                 {{time}}
               </p>
@@ -73,7 +78,7 @@ const schedule = require('../assets/schedule.json');
 
 export default {
   name: 'Schedule',
-  props: ['live'],
+  props: ['live', 'channel'],
   data() {
     return {
       schedule: {},
@@ -132,5 +137,11 @@ export default {
 <style scoped>
   .is-full-mobile {
     padding: 0;
+  }
+  .heading {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
   }
 </style>
