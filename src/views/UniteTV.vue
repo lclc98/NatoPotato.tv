@@ -96,7 +96,7 @@ export default {
       {
         vmid: 'description',
         name: 'description',
-        content: 'A stream team',
+        content: 'Welcome to UniteTV, we are more than a stream team, we are an established loving community of friends and family, run by you guys!',
       },
     ],
     htmlAttrs: {

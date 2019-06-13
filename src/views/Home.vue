@@ -225,5 +225,4 @@ export default {
     height: 256px;
     width: 256px;
   }
-
 </style>
