@@ -1,40 +1,7 @@
 <template>
   <div class="section">
     <div class="columns">
-      <div class="column is-offset-one-quarter-desktop is-one-quarter-desktop">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image">
-              <img src="../assets/sponsors/mvmt.png" alt="MVMT Banner">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-2">MVMT</p>
-              </div>
-            </div>
-
-            <div class="content">
-              <p class="title is-5">
-                Wanna be heckin stylish like me?<br>
-                Of course you do!
-              </p>
-              <pre class="preline is-family-primary">
-                Check out MVMT for their extensive range of premium mens/womens watches,
-                glasses & sunglasses.
-
-                Use the code "natopotato" at checkout for 15% discount or click <a href="http://bit.ly/2GD76Ip">here</a>
-
-                You can support the stream and look sexy af.
-
-                <a href="http://bit.ly/2GD76Ip">NatoPotato is sponsored by MVMT.</a>
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-quarter-desktop">
+      <div class="column is-offset-one-third-desktop is-one-third-desktop">
         <div class="card">
           <div class="card-image">
             <figure class="image">
