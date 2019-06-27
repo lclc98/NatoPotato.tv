@@ -11,11 +11,11 @@
     "bulma": "git://github.com/jgthms/bulma#ff17a85faa",
     "js-joda": "^1.10.1",
     "js-joda-timezone": "2.0.1",
-    "twitch": "^3.0.0-pre.4",
+    "twitch": "^3.0.0-pre.6",
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.0",
     "vue-awesome-countdown": "^1.0.14",
-    "vue-cookie": "^1.1.4",
+    "vue-cookies": "1.5.13",
     "vue-meta": "^1.6.0",
     "vue-router": "^3.0.6",
     "vue-tweet-embed": "^2.3.0"

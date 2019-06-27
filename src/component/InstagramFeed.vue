@@ -29,8 +29,10 @@ export default {
   name: 'InstagramFeed',
 
   data() {
-    let show = this.$cookie.get('instagram');
-    show = show === null || show === 'true';
+    let show = true;
+    if (this.$cookies.isKey('instagram')) {
+      show = this.$cookies.get('instagram') === 'true';
+    }
     return { posts: [], show };
   },
   mounted() {
@@ -63,7 +65,7 @@ export default {
     },
     showHide() {
       this.show = !this.show;
-      this.$cookie.set('instagram', this.show, { expires: '1M' });
+      this.$cookies.set('instagram', this.show, '1m');
     },
   },
 };

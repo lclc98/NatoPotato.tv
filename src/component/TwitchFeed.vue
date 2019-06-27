@@ -38,20 +38,22 @@ export default {
   name: 'TwitchFeed',
   props: ['channel'],
   data() {
-    let show = this.$cookie.get('twitch');
-    show = show === null || show === 'true';
+    let show = true;
+    if (this.$cookies.isKey('twitch')) {
+      show = this.$cookies.get('twitch') === 'true';
+    }
     return { posts: [], show };
   },
   async mounted() {
     twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
     const user = await twitchClient.helix.users.getUserByName(this.channel);
-    this.posts = await twitchClient.helix.videos.getVideosByUser(user.id, { type: 'archive', first: 2 }).getAll();
+    this.posts = await twitchClient.helix.videos.getVideosByUserPaginated(user.id, { type: 'archive', first: 2 }).getAll();
     this.posts.length = 2;
   },
   methods: {
     showHide() {
       this.show = !this.show;
-      this.$cookie.set('twitch', this.show, { expires: '1M' });
+      this.$cookies.set('twitch', this.show, '1m');
     },
   },
 };

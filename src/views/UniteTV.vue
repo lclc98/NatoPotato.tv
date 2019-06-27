@@ -120,8 +120,7 @@ export default {
       .then(value => value.json()
         .then((teamData) => {
           teamUsers = teamData.users;
-        }))
-      .catch(reason => console.log(reason));
+        }));
     const userList = Object.keys(teamUsers)
       .map((key) => {
         const value = teamUsers[key];

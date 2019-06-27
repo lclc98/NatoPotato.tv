@@ -33,8 +33,10 @@
 export default {
   name: 'YoutubeVideos',
   data() {
-    let show = this.$cookie.get('youtube');
-    show = show === null || show === 'true';
+    let show = true;
+    if (this.$cookies.isKey('youtube')) {
+      show = this.$cookies.get('youtube') === 'true';
+    }
     return { youtubePlaylist: [], show };
   },
   mounted() {
@@ -51,7 +53,7 @@ export default {
   methods: {
     showHide() {
       this.show = !this.show;
-      this.$cookie.set('youtube', this.show, { expires: '1M' });
+      this.$cookies.set('youtube', this.show, '1m');
     },
   },
 };

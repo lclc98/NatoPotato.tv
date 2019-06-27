@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Meta from 'vue-meta';
 import Router from 'vue-router';
-import VueCookie from 'vue-cookie';
+import VueCookies from 'vue-cookies';
 import VueAnalytics from 'vue-analytics';
 import VueAwesomeCountdoown from 'vue-awesome-countdown';
 
@@ -83,9 +83,9 @@ const router = new Router({
   ],
 });
 
+Vue.use(VueCookies);
 Vue.use(Meta);
 Vue.use(Router);
-Vue.use(VueCookie);
 Vue.use(VueAwesomeCountdoown);
 
 Vue.use(VueAnalytics, {

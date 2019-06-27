@@ -27,14 +27,16 @@ export default {
   name: 'TwitterFeed',
   components: { Timeline },
   data() {
-    let show = this.$cookie.get('twitter');
-    show = show === null || show === 'true';
+    let show = true;
+    if (this.$cookies.isKey('twitter')) {
+      show = this.$cookies.get('twitter') === 'true';
+    }
     return { show };
   },
   methods: {
     showHide() {
       this.show = !this.show;
-      this.$cookie.set('twitter', this.show, { expires: '1M' });
+      this.$cookies.set('twitter', this.show, '1m');
     },
   },
 };
