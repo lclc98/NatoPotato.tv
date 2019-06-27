@@ -139,7 +139,7 @@ export default {
     twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
 
     // TODO Rework to allow > 100 users in the team
-    const livestreams = await twitchClient.helix.streams.getStreams({ userId })
+    const livestreams = await twitchClient.helix.streams.getStreamsPaginated({ userId })
       .getAll();
     const liveUsers = Object.keys(livestreams)
       .map((key) => {

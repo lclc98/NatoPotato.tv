@@ -14,7 +14,7 @@ const Sponsors = () => import(/* webpackChunkName: "sponsors" */ './views/Sponso
 const Redirect = () => import(/* webpackChunkName: "redirect" */ './views/Redirect.vue');
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
