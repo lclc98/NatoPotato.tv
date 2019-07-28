@@ -110,33 +110,24 @@ export default {
     };
   },
   async mounted() {
-    let teamUsers = [];
-    await fetch('https://api.twitch.tv/kraken/teams/unitetv', {
-      headers: {
-        'Client-Id': process.env.VUE_APP_CLIENT_ID,
-        accept: 'application/vnd.twitchtv.v5+json',
-      },
-    })
-      .then(value => value.json()
-        .then((teamData) => {
-          teamUsers = teamData.users;
-        }));
+    twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
+
+    const teamData = await twitchClient.kraken.teams.getTeamByName('unitetv');
+    const teamUsers = await teamData.getUsers();
     const userList = Object.keys(teamUsers)
       .map((key) => {
         const value = teamUsers[key];
         return {
-          // eslint-disable-next-line no-underscore-dangle
-          userId: value._id,
+          userId: value.id,
           username: value.name,
-          displayName: value.display_name,
-          logo: value.logo,
+          displayName: value.displayName,
+          logo: value.logoUrl,
           live: false,
         };
       });
 
     const userId = Object.keys(userList)
       .map(key => userList[key].userId);
-    twitchClient = await TwitchClient.withCredentials(process.env.VUE_APP_CLIENT_ID);
 
     // TODO Rework to allow > 100 users in the team
     const livestreams = await twitchClient.helix.streams.getStreamsPaginated({ userId })
