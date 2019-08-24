@@ -77,3 +77,54 @@ a {
 body > .navbar {
   border-radius: 0;
 }
+
+//Custom
+.instagram-media {
+  min-width: 0 !important;
+}
+
+.is-full-mobile {
+  padding: 0;
+}
+
+.heading {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.column.is-eight-tenths {
+  flex: none;
+  width: 80%;
+}
+
+@media screen and (min-width: 769px), print {
+  .column.is-offset-one-tenth-tablet {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .column.is-eight-tenths-desktop {
+    flex: none;
+    width: 80%;
+  }
+
+  .column.is-offset-one-tenth-desktop {
+    margin-left: 10%;
+  }
+}
+
+.image.is-256x256 {
+  height: 256px;
+  width: 256px;
+}
+
+.media-content {
+  overflow-y: hidden;
+}
+
+.navbar-burger {
+  margin-left: unset !important;
+}

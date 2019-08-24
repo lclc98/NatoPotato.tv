@@ -16,9 +16,6 @@
           <router-link class="navbar-item" to="/">
             Home
           </router-link>
-          <!--          <router-link class="navbar-item" to="/specs">-->
-          <!--            Computer Specs-->
-          <!--          </router-link>-->
           <router-link class="navbar-item" to="/sponsors">
             Sponsors
           </router-link>
@@ -51,9 +48,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .navbar-burger {
-    margin-left: unset !important;
-  }
-</style>

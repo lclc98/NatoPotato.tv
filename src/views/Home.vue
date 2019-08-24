@@ -94,7 +94,6 @@
               </h2>
             </div>
           </div>
-          <div class="column is-one-fifth-tablet"></div>
         </div>
         <div v-if="live" class="card is-hidden-mobile">
           <header class="card-header">
@@ -146,13 +145,13 @@
 </template>
 
 <script>
+import TwitchClient from 'twitch/lib/TwitchClient';
+
 const YoutubeVideos = () => import(/* webpackChunkName: "youtube" */ '../component/YoutubeVideos.vue');
 const TwitterFeed = () => import(/* webpackChunkName: "twitter" */ '../component/TwitterFeed.vue');
 const InstagramFeed = () => import(/* webpackChunkName: "instagram" */ '../component/InstagramFeed.vue');
 const TwitchFeed = () => import(/* webpackChunkName: "twitch" */ '../component/TwitchFeed.vue');
 const Schedule = () => import(/* webpackChunkName: "schedule" */ '../component/Schedule.vue');
-
-const TwitchClient = require('twitch').default;
 
 export default {
   name: 'home',
@@ -193,36 +192,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .column.is-eight-tenths {
-    flex: none;
-    width: 80%;
-  }
-
-  @media screen and (min-width: 769px), print {
-    .column.is-offset-one-tenth-tablet {
-      margin-left: 10%;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .column.is-eight-tenths-desktop {
-      flex: none;
-      width: 80%;
-    }
-
-    .column.is-offset-one-tenth-desktop {
-      margin-left: 10%;
-    }
-  }
-
-  .column.is-offset-one-tenth {
-    margin-left: 10%;
-  }
-
-  .image.is-256x256 {
-    height: 256px;
-    width: 256px;
-  }
-</style>

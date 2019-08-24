@@ -57,9 +57,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .media-content{
-    overflow-y: hidden;
-  }
-</style>

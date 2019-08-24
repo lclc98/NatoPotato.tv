@@ -45,8 +45,7 @@ export default {
         .then((data) => {
           if (data.items) {
             this.youtubePlaylist = data.items;
-            // TODO DONT MAKE ASSUMPTION ON LENGTH
-            this.youtubePlaylist.length = 3;
+            this.youtubePlaylist.length = Math.min(3, this.youtubePlaylist.length);
           }
         }));
   },

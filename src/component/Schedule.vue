@@ -73,9 +73,9 @@
 <script>
 import Vue from 'vue';
 import {
-  DateTimeFormatter, DayOfWeek, LocalDate, LocalTime, ZonedDateTime, ZoneId, ChronoUnit,
-} from 'js-joda';
-import 'js-joda-timezone';
+  DateTimeFormatter, ZonedDateTime, ZoneId, ChronoUnit,
+} from '@js-joda/core';
+import '@js-joda/timezone/dist/js-joda-timezone-2012-2022.min';
 
 const schedule = require('../assets/schedule.json');
 
@@ -99,17 +99,13 @@ export default {
       let nextLive = ZonedDateTime.now()
         .plusMonths(1);
       const timezone = ZoneId.systemDefault();
+      const fromTimezone = ZoneId.of(schedule.timezone);
       days.forEach((day) => {
         if (schedule.enabled[day]) {
-          schedule[day].forEach((time) => {
-            const x = DayOfWeek.valueOf(day.toUpperCase());
-            let data = ZonedDateTime.of(LocalDate.now(), LocalTime.of(time.HH, time.mm), ZoneId.of(schedule.timezone));
-            const dd = data.dayOfWeek().value();
-            if (dd > x.value()) {
-              data = data.minusDays(dd - x.value());
-            } else {
-              data = data.plusDays(x.value() - dd);
-            }
+          schedule[day].forEach((t) => {
+            const dayOfWeek = ((days.indexOf(day) - 1) % 7) + 1;
+            let data = now.withHour(t.HH).withMinute(t.mm).withZoneSameLocal(fromTimezone);
+            data = data.plusDays(dayOfWeek - data.dayOfWeek().value());
             let converted = data.withZoneSameInstant(timezone);
             if (converted.isBefore(now)) {
               converted = converted.plusWeeks(1);
@@ -117,8 +113,7 @@ export default {
             if (now.until(converted, ChronoUnit.MILLIS) < now.until(nextLive, ChronoUnit.MILLIS)) {
               nextLive = converted;
             }
-            const dayName = converted.dayOfWeek()
-              .name();
+            const dayName = converted.dayOfWeek().name();
             let dayData = this.schedule[dayName];
             if (!dayData) {
               dayData = [];
@@ -139,15 +134,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .is-full-mobile {
-    padding: 0;
-  }
-  .heading {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-  }
-</style>

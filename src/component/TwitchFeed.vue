@@ -30,8 +30,7 @@
 </template>
 
 <script>
-
-const TwitchClient = require('twitch').default;
+import TwitchClient from 'twitch/lib/TwitchClient';
 
 let twitchClient;
 export default {

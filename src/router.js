@@ -2,12 +2,10 @@ import Vue from 'vue';
 import Meta from 'vue-meta';
 import Router from 'vue-router';
 import VueCookies from 'vue-cookies';
-import VueAnalytics from 'vue-analytics';
 import VueAwesomeCountdoown from 'vue-awesome-countdown';
 
 import './assets/style.scss';
 
-// import Specs from './views/Specs.vue';
 const Home = () => import(/* webpackChunkName: "home" */ './views/Home.vue');
 const UniteTV = () => import(/* webpackChunkName: "unitetv" */ './views/UniteTV.vue');
 const Sponsors = () => import(/* webpackChunkName: "sponsors" */ './views/Sponsors.vue');
@@ -87,14 +85,5 @@ Vue.use(VueCookies);
 Vue.use(Meta);
 Vue.use(Router);
 Vue.use(VueAwesomeCountdoown);
-
-Vue.use(VueAnalytics, {
-  id: 'UA-141765684-1',
-  debug: {
-    sendHitTask: process.env.NODE_ENV === 'production',
-    enabled: process.env.NODE_ENV !== 'production',
-  },
-  router,
-});
 
 export default router;

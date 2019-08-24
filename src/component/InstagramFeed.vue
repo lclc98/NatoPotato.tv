@@ -36,7 +36,7 @@ export default {
     return { posts: [], show };
   },
   mounted() {
-    fetch('https://cors-anywhere.herokuapp.com/https://www.instagram.com/nato____potato/?__a=1', { headers: { 'X-Requested-With': 'fetch' } })
+    fetch('https://www.instagram.com/nato____potato/?__a=1')
       .then(value => value.text()
         .then((data) => {
           const postPattern = new RegExp(/"shortcode":\s*"([0-9a-zA-Z]+)",/g);
@@ -44,7 +44,7 @@ export default {
           const shortcode = this.matchAll(data, postPattern);
           shortcode.length = 3;
           for (let index = 0; index < shortcode.length; index += 1) {
-            fetch(`https://cors-anywhere.herokuapp.com/https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`, { headers: { 'X-Requested-With': 'fetch' } })
+            fetch(`https://api.instagram.com/oembed/?url=https://instagr.am/p/${shortcode[index]}/&maxwidth=320&omitscript=true`)
               .then(value1 => value1.json()
                 .then((value2) => {
                   Vue.set(this.posts, index, value2.html.replace('max-width:320px;', '').replace('min-width:326px;', ''));
@@ -70,8 +70,3 @@ export default {
   },
 };
 </script>
-<style>
-  .instagram-media {
-    min-width: 0 !important;
-  }
-</style>

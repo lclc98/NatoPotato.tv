@@ -84,10 +84,9 @@
 </template>
 
 <script>
-import TwitchClient from 'twitch';
+import TwitchClient from 'twitch/lib/TwitchClient';
 
 let twitchClient;
-
 export default {
   name: 'UniteTV',
   metaInfo: {
@@ -149,9 +148,7 @@ export default {
       });
     const mergedUsers = Array.from(hash.values());
     mergedUsers.sort((a, b) => {
-      if (a.live === b.live) {
-        return a.live ? b.viewers - a.viewers : 0;
-      }
+      if (a.live === b.live) return a.live ? b.viewers - a.viewers : 0;
       return a.live ? -1 : 1;
     });
     this.users = mergedUsers;
@@ -169,9 +166,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .has-box-select {
-    background-color: #014963;
-  }
-</style>
