@@ -81,6 +81,7 @@ body > .navbar {
 //Custom
 .instagram-media {
   min-width: 0 !important;
+  width: 100%;
 }
 
 .is-full-mobile {
@@ -140,6 +141,7 @@ html {
   padding-top: 56.25%;
   box-sizing: content-box;
   -webkit-box-sizing: content-box;
+
   iframe {
     position: absolute;
     width: 100%;

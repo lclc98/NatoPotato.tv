@@ -1,0 +1,18 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{title}}
+    </p>
+    <a (click)="showHide()" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <fa-icon *ngIf="show" [icon]="faAngleDown" size="2x"></fa-icon>
+        <fa-icon *ngIf="!show" [icon]="faAngleUp" size="2x"></fa-icon>
+      </span>
+    </a>
+  </header>
+  <div [hidden]="!show" class="card-content">
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

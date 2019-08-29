@@ -1,0 +1,140 @@
+<div class="section">
+  <div class="columns is-mobile">
+    <div class="column is-eight-tenths is-offset-one-tenth-desktop is-offset-one-tenth-tablet">
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <p class="level-item ">
+            <a class="is-hidden-touch" routerLink="/live">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faTwitch" size="2x"></fa-icon>
+                </span>
+            </a>
+            <a class="is-hidden-desktop" href="twitch://stream/natopotato">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faTwitch" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a routerLink="/youtube">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faYoutube" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a routerLink="/twitter">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faTwitter" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a routerLink="/instagram">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faInstagram" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a routerLink="/facebook">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faFacebook" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a href="https://discord.gg/2QVCUV6">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faDiscord" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a routerLink="/merch">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faTshirt" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+          <p class="level-item">
+            <a href="mailto:natopotato.official@gmail.com">
+                <span class="icon is-medium has-text-white">
+                  <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
+                </span>
+            </a>
+          </p>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="columns is-mobile">
+    <div class="column is-eight-tenths-desktop is-offset-one-tenth-desktop is-full-touch">
+      <div class="column is-flex" style="justify-content: center;">
+        <figure class="image is-256x256">
+          <img class="is-rounded" style="border: 4px solid white;" src="assets/profile.jpg">
+        </figure>
+      </div>
+
+      <div class="columns">
+        <div class="column is-offset-one-fifth-tablet is-three-fifths-tablet">
+          <div class="has-text-centered">
+            <h1 class="title">NatoPotato</h1>
+          </div>
+          <div class="has-text-centered">
+            <h2 class="subtitle">
+              G'Day Guys, What's Happening? My Name Is NatoPotato!<br><br>
+              I am a 25 E-Boy from Perth, Western Australia with a passion for games and
+              entertaining, I have a beautiful fiancé and a feather baby named Alfie.
+              Streaming started for me when I lost my job and needed something to fill in my days,
+              I currently work casually, study, exercise, stream, create content and spend my free
+              time (if any) with my fiancé and Alfie.
+              I would love to get to know you so come say hi and join the community!
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="live" class="card is-hidden-mobile">
+        <header class="card-header">
+          <p class="card-header-title">
+              <span class="icon has-text-danger">
+                <fa-icon [icon]="faCircle"></fa-icon>
+              </span>
+            Live
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="columns">
+            <div class="column">
+              <div class="aspect-ratio">
+                <iframe class="aspect-ratio" src="https://player.twitch.tv/?channel=natopotato&muted=true"
+                        allowfullscreen title="natopotato">
+                </iframe>
+              </div>
+            </div>
+            <div class="column" style="flex: none; width: 25%; padding-top: 0; padding-bottom: 0">
+              <iframe src="https://www.twitch.tv/embed/natopotato/chat" title="natopotato" width="100%"
+                      height="100%" style="height:100%"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <app-schedule></app-schedule>
+      <br>
+        <app-feed-twitch class="is-hidden-mobile"></app-feed-twitch>
+      <br>
+      <div class="columns">
+        <div class="column is-one-third">
+          <app-feed-youtube></app-feed-youtube>
+        </div>
+        <div class="column is-one-third">
+          <app-feed-twitter></app-feed-twitter>
+        </div>
+        <div class="column is-one-third">
+          <app-feed-instagram></app-feed-instagram>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

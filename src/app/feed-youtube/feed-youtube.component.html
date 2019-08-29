@@ -1,0 +1,12 @@
+<app-card title="Youtube">
+  <div *ngIf="videos.length == 0">
+    Loading videos...
+  </div>
+  <div *ngFor="let video of videos; let i = index">
+    <div class="aspect-ratio">
+      <iframe class="aspect-ratio" [src]="'https://www.youtube.com/embed/'+video.contentDetails.videoId | safe"
+              allowfullscreen [title]="video.contentDetails.videoId"></iframe>
+    </div>
+    <br *ngIf="i < 2">
+  </div>
+</app-card>

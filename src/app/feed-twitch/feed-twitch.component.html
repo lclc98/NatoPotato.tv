@@ -1,0 +1,9 @@
+<app-card title="Previous Streams">
+  <div class="columns">
+    <div class="column is-half" *ngFor="let video of posts">
+      <div class="aspect-ratio">
+        <iframe class="aspect-ratio" [src]="video | safe" allowfullscreen title="natopotato"></iframe>
+      </div>
+    </div>
+  </div>
+</app-card>

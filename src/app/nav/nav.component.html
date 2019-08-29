@@ -1,0 +1,25 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" (click)="onClickNavbar()"
+       class="navbar-burger burger" [class.is-active]="navbarOpen"
+       aria-label="menu" aria-expanded="false" data-target="navbarNatoPotato">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarNatoPotato" class="navbar-menu" [class.is-active]="navbarOpen">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/">
+        Home
+      </a>
+      <a class="navbar-item" routerLink="/sponsors">
+        Sponsors
+      </a>
+      <a class="navbar-item is-hidden-touch" routerLink="/unitetv">
+        UniteTV
+      </a>
+    </div>
+  </div>
+</nav>

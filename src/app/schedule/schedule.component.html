@@ -1,0 +1,67 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">Schedule</p>
+  </header>
+  <div class="card-content" [ngSwitch]="true">
+    <div *ngSwitchCase="live" class="has-text-centered">
+      <h1 class="title">
+        <a class="is-hidden-touch" routerLink="/live">
+          <span class="icon has-text-danger"><fa-icon [icon]="faCircle"></fa-icon></span> NOW LIVE
+        </a>
+        <a class="is-hidden-desktop" href="twitch://stream/natopotato">
+          <span class="icon has-text-danger"><fa-icon [icon]="faCircle"></fa-icon></span> NOW LIVE
+        </a>
+      </h1>
+    </div>
+    <div *ngSwitchDefault class="columns">
+      <div class="column is-half-desktop is-offset-one-quarter-desktop is-full-mobile">
+        <h1 class="title has-text-centered">Live in:</h1>
+        <countdown [config]="{leftTime: next}" (finished)="finish()">
+          <nav class="level is-mobile has-text-centered is-centered">
+            <div class="level-item">
+              <div>
+                <p class="heading is-uppercase has-text-info">Days</p>
+                <p class="title">$!d!</p>
+              </div>
+            </div>
+            <div class="level-item">
+              <div>
+                <p class="heading is-uppercase has-text-info">Hours</p>
+                <p class="title">$!h!</p>
+              </div>
+            </div>
+            <div class="level-item">
+              <div>
+                <p class="heading is-uppercase has-text-info">Minutes</p>
+                <p class="title">$!m!</p>
+              </div>
+            </div>
+            <div class="level-item">
+              <div>
+                <p class="heading is-uppercase has-text-info">Seconds</p>
+                <p class="title">$!s!</p>
+              </div>
+            </div>
+          </nav>
+          <span slot="finish"></span>
+        </countdown>
+      </div>
+    </div>
+    <div>
+      <nav class="level tablet">
+        <div class="level-item has-text-centered" *ngFor="let day of schedule| keyvalue">
+          <div>
+            <p class="heading is-uppercase has-text-info">{{day.key}}</p>
+            <p class="title is-size-6" *ngFor="let time of day.value">
+              {{time}}
+            </p>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <br>
+    <div *ngIf="timezone" class="has-text-centered">
+      Times shown in {{timezone}}
+    </div>
+  </div>
+</div>
