@@ -1,8 +1,8 @@
-import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
-import {TwitchService} from '../twitch.service';
+import {Component, OnInit} from '@angular/core';
+import {TwitchService} from '../../twitch.service';
 
 @Component({
-  selector: 'app-feed-twitch',
+  selector: 'home-feed-twitch',
   templateUrl: './feed-twitch.component.html',
   styleUrls: ['./feed-twitch.component.scss']
 })

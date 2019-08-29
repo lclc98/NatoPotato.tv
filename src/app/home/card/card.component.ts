@@ -3,7 +3,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-card',
+  selector: 'home-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })

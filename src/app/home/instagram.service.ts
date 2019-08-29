@@ -18,6 +18,7 @@ export class InstagramService {
     return this.getUser(user).pipe(mergeMap(value => {
       let shortcodes = [];
       let i = 0;
+      // @ts-ignore
       for (let edge of value.graphql.user.edge_owner_to_timeline_media.edges) {
         if (i >= 3)
           break;

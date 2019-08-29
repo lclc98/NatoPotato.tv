@@ -1,0 +1,79 @@
+<div class="section">
+  <div class="columns is-centered">
+    <div class="column is-one-quarter-desktop">
+      <div class="card" style="height: 100%; overflow-y: auto;">
+        <div class="card-content" style="position: absolute; width: 100%">
+          <div *ngFor="let user of users" class="box has-pointer"
+               [class.has-box-select]="selected && user.userId===selected.userId"
+               (click)="onClick(user)">
+            <article class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <figure class="image is-32x32">
+                    <img class="is-rounded" [src]="user.logo" alt="Image">
+                  </figure>
+                </div>
+                <div class="level-item">
+                  <strong>{{user.displayName}}</strong>
+                </div>
+              </div>
+              <div *ngIf="user.live" class="level-right">
+                <div class="level-item">
+                      <span class="icon has-text-danger">
+                        <fa-icon [icon]="faCircle"></fa-icon>
+                      </span> {{user.viewers}}
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-two-fifths-desktop">
+      <div class="card">
+        <div class="card-content">
+          <div *ngIf="selected">
+            <article class="level">
+              <a [href]="'https://www.twitch.tv/'+selected.username">
+                <div class="level-left">
+                  <div class="level-item">
+                    <figure class="image is-32x32">
+                      <img class="is-rounded" [src]="selected.logo" [alt]="selected.username">
+                    </figure>
+                  </div>
+                  <div class="level-item">
+                    <h1 class="title">{{selected.displayName}}</h1>
+                  </div>
+                </div>
+              </a>
+            </article>
+            <div class="aspect-ratio">
+              <iframe [src]="'https://player.twitch.tv/?channel='+ selected.username| safe" class="aspect-ratio"
+                      allowfullscreen
+                      [title]="selected.username">
+              </iframe>
+            </div>
+            <br>
+          </div>
+          <h6 class="title is-3">UniteTV</h6>
+          <pre class="preline is-family-primary">
+              Welcome to UniteTV, we are more than a stream team, we are an established loving
+              community of friends and family, run by you guys!
+
+              I have created UniteTV for the soul purpose to give back to you all and to provide
+              you a place where you can make friends, grow your channel with like minded streamers
+              and most importantly, belong.
+
+              UniteTV has a discord which you can find <a class="is-size-6 has-text-weight-bold"
+                                                          href="https://discord.gg/zDxp8rA">here</a>
+
+              Thank you all for absolutely everything you do, it means the world to me!
+
+              Love NatoPotato.
+            </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

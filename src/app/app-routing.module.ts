@@ -1,16 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {SponsorsComponent} from "./sponsors/sponsors.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'sponsors', component: SponsorsComponent},
-  {path: '', component: HomeComponent}
+  {path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+  {path: 'sponsors', loadChildren: () => import('./sponsors/sponsors.module').then(m => m.SponsorsModule)},
+  {path: 'unitetv', loadChildren: () => import('./unitetv/unitetv.module').then(m => m.UnitetvModule)}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

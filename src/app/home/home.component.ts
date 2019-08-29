@@ -7,11 +7,11 @@ import {
   faTwitter,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
-import {faAngleDown, faAngleUp, faCircle, faEnvelope, faTshirt} from '@fortawesome/free-solid-svg-icons';
+import {faCircle, faEnvelope, faTshirt} from '@fortawesome/free-solid-svg-icons';
 import {TwitchService} from '../twitch.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

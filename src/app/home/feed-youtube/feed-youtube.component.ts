@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {YoutubeService} from "../youtube.service";
 
 @Component({
-  selector: 'app-feed-youtube',
+  selector: 'home-feed-youtube',
   templateUrl: './feed-youtube.component.html',
   styleUrls: ['./feed-youtube.component.scss']
 })
