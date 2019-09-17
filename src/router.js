@@ -11,6 +11,7 @@ const UniteTV = () => import(/* webpackChunkName: "unitetv" */ './views/UniteTV.
 const Sponsors = () => import(/* webpackChunkName: "sponsors" */ './views/Sponsors.vue');
 const Redirect = () => import(/* webpackChunkName: "redirect" */ './views/Redirect.vue');
 
+
 const router = new Router({
   mode: 'hash',
   base: process.env.BASE_URL,
