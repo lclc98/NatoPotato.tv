@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TwitchService} from '../../twitch.service';
 
 @Component({
-  selector: 'home-feed-twitch',
+  selector: 'app-feed-twitch',
   templateUrl: './feed-twitch.component.html',
   styleUrls: ['./feed-twitch.component.scss']
 })

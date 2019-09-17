@@ -3,10 +3,10 @@ import {ChronoUnit, DateTimeFormatter, ZonedDateTime, ZoneId} from '@js-joda/cor
 import '@js-joda/timezone/dist/js-joda-timezone-2012-2022.min';
 import {faCircle} from '@fortawesome/free-solid-svg-icons';
 import schedule from './schedule.js';
-import {TwitchService} from "../../twitch.service";
+import {TwitchService} from '../../twitch.service';
 
 @Component({
-  selector: 'home-schedule',
+  selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss']
 })

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SponsorsComponent} from "./sponsors.component";
+import {SponsorsComponent} from './sponsors.component';
 
 const routes: Routes = [
   {path: '', component: SponsorsComponent},

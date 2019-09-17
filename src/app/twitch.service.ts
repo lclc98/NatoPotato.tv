@@ -1,12 +1,10 @@
 import {Injectable} from '@angular/core';
-import TwitchClient, {HelixStream, HelixUser} from 'twitch';
 import {environment} from '../environments/environment';
 import {from, Observable} from 'rxjs';
 import {mergeMap, publishReplay, refCount} from 'rxjs/operators';
+import TwitchClient, {HelixPaginatedResult, HelixStream, HelixUser, HelixVideo} from 'twitch';
 import {HelixPaginatedVideoFilter} from 'twitch/lib/API/Helix/Video/HelixVideoAPI';
-import HelixVideo from 'twitch/lib/API/Helix/Video/HelixVideo';
-import HelixPaginatedResult from "twitch/lib/API/Helix/HelixPaginatedResult";
-import {HelixStreamFilter} from "twitch/lib/API/Helix/Stream/HelixStreamAPI";
+import {HelixStreamFilter} from 'twitch/lib/API/Helix/Stream/HelixStreamAPI';
 
 @Injectable({
   providedIn: 'root'

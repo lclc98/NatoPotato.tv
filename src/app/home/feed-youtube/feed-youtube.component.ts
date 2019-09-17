@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {YoutubeService} from "../youtube.service";
+import {YoutubeService} from '../youtube.service';
 
 @Component({
-  selector: 'home-feed-youtube',
+  selector: 'app-feed-youtube',
   templateUrl: './feed-youtube.component.html',
   styleUrls: ['./feed-youtube.component.scss']
 })
@@ -16,9 +16,11 @@ export class FeedYoutubeComponent implements OnInit {
   ngOnInit() {
     this.youtubeService.getPlaylist('UURuM4_srnCdgGN50IlJxNBQ')
       .subscribe(value => {
-        if (value.hasOwnProperty("items"))
-          this.videos = value["items"];
-      })
+        if ('items' in value) {
+          // @ts-ignore
+          this.videos = value.items;
+        }
+      });
   }
 
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {InstagramService} from "../instagram.service";
+import {InstagramService} from '../instagram.service';
 
 @Component({
-  selector: 'home-feed-instagram',
+  selector: 'app-feed-instagram',
   templateUrl: './feed-instagram.component.html',
   styleUrls: ['./feed-instagram.component.scss']
 })
@@ -20,8 +20,8 @@ export class FeedInstagramComponent implements OnInit {
           this.posts[value.i] = (post.html);
           // @ts-ignore
           window.instgrm.Embeds.process();
-        })
-      })
+        });
+      });
   }
 
 }

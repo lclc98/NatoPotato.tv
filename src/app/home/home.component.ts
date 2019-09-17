@@ -11,7 +11,7 @@ import {faCircle, faEnvelope, faTshirt} from '@fortawesome/free-solid-svg-icons'
 import {TwitchService} from '../twitch.service';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

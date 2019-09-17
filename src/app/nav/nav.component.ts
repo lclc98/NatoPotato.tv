@@ -1,15 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
-  navbarOpen: boolean = false;
-
-  ngOnInit(): void {
-  }
+export class NavComponent {
+  navbarOpen = false;
 
   onClickNavbar() {
     this.navbarOpen = !this.navbarOpen;
