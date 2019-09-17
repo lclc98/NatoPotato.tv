@@ -11,7 +11,7 @@
     "@js-joda/core": "1.11.0",
     "@js-joda/timezone": "^2.1.1",
     "bulma": "git://github.com/jgthms/bulma#ff17a85faa",
-    "twitch": "^3.4.2",
+    "twitch": "^3.4.4",
     "vue": "^2.6.10",
     "vue-awesome-countdown": "^1.0.16",
     "vue-cookies": "^1.5.13",
