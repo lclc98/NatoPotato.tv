@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["redirect"],{"4e42":function(e,r,t){"use strict";t.r(r);var i=function(){var e=this,r=e.$createElement,t=e._self._c||r;return t("div",[e._v("\n  Redirecting please wait or click "),t("a",{attrs:{href:e.redirectURL}},[e._v("here")])])},n=[],c={name:"redirect",props:["redirectURL"],created:function(){window.location.href=this.redirectURL}},a=c,o=t("2877"),d=Object(o["a"])(a,i,n,!1,null,null,null);r["default"]=d.exports}}]);
-//# sourceMappingURL=redirect.0318f576.js.map
+//# sourceMappingURL=redirect.b2b021cd.js.map
