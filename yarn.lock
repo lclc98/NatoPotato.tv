@@ -8452,13 +8452,14 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
 
-vue-awesome-countdown@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/vue-awesome-countdown/-/vue-awesome-countdown-1.0.16.tgz#278c21c5c9d717951d989ec1d1827bb56de5ad9a"
-  integrity sha512-CGVhoBeOx4Q1YNLr9su1S9hjHEvNVoQ0stAQTKeyYDZQ9VQzqkhYlBv0Z+w5ADoo+cCxmwmWk6Ah9bx4+uM2aw==
+vue-awesome-countdown@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/vue-awesome-countdown/-/vue-awesome-countdown-1.0.19.tgz#bd27e9e7871054bca5fc683918f40669cc861313"
+  integrity sha512-SMuj1o0j4EjYBJIsy+rxgJcYYQp9hJQEGGax3uBVE56AnRkmyA6yU1hbPyDAvLD/ZXiqg7TiXKqq7Olwr6tJdw==
   dependencies:
     "@vue/cli-service" "^3.2.0"
-    vue-template-compiler "^2.5.21"
+    vue "2.6.10"
+    vue-template-compiler "^2.6.10"
 
 vue-cookies@^1.5.13:
   version "1.5.13"
@@ -8513,7 +8514,7 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.5.21, vue-template-compiler@^2.6.10:
+vue-template-compiler@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
   integrity sha512-jVZkw4/I/HT5ZMvRnhv78okGusqe0+qH2A0Em0Cp8aq78+NK9TII263CDVz2QXZsIT+yyV/gZc/j/vlwa+Epyg==
@@ -8533,7 +8534,7 @@ vue-tweet-embed@^2.3.0:
   dependencies:
     "@babel/polyfill" "^7.0.0"
 
-vue@^2.6.10:
+vue@2.6.10, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
