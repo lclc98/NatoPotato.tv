@@ -808,10 +808,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@js-joda/core@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@js-joda/core/-/core-1.11.0.tgz#587e3b1a9496f5093526f7195d176c1289406fe5"
-  integrity sha512-GsqC3c/z21VjsfqXChWkwXxVaPbVZ4pRzXTJTomrITo8snEWN05Mv4CwCXjabA9j9CS7T+yxBv3vXpp/DabGEw==
+"@js-joda/core@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@js-joda/core/-/core-1.12.0.tgz#f310b0f89382adb54cf6d636dc38f295736d7835"
+  integrity sha512-XfqsWzY2jRUcVesKJ/vbZPDzfBZo2jHBWofabPozJQFguSQ0XEaUbdFPBeUICUmfeRsQn/Z+/SPTHSboT0XO3A==
 
 "@js-joda/timezone@^2.1.1":
   version "2.1.1"
