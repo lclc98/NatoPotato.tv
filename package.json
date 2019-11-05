@@ -20,7 +20,7 @@
     "vue-tweet-embed": "^2.3.0"
   },
   "devDependencies": {
-    "core-js": "^3.3.5",
+    "core-js": "^3.3.6",
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-service": "^4.0.5",
