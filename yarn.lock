@@ -601,14 +601,6 @@
     "@babel/helper-regex" "^7.4.4"
     regexpu-core "^4.6.0"
 
-"@babel/polyfill@^7.0.0":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.6.0.tgz#6d89203f8b6cd323e8d946e47774ea35dc0619cc"
-  integrity sha512-q5BZJI0n/B10VaQQvln1IlDK3BTBJFbADx7tv+oXDPIDZuTo37H5Adb9jhlXm/fEN4Y7/64qD9mnrJJG7rmaTw==
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.2"
-
 "@babel/preset-env@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.6.3.tgz#9e1bf05a2e2d687036d24c40e4639dc46cef2271"
@@ -2560,11 +2552,6 @@ core-js-pure@^3.0.0:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.3.4.tgz#01d2842f552a866265dc77ededb2ccd668ff2879"
   integrity sha512-hqxt6XpR4zIMNUY920oNyAtwaq4yg8IScmXumnfyRWF9+ur7wtjr/4eCdfTJzY64jmi8WRCwIqNBKzYeOKdvnw==
-
-core-js@^2.6.5:
-  version "2.6.10"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
-  integrity sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==
 
 core-js@^3.3.2, core-js@^3.4.0:
   version "3.4.0"
@@ -8946,12 +8933,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-tweet-embed@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/vue-tweet-embed/-/vue-tweet-embed-2.3.0.tgz#127079eeacf85eba10dbea46b6fe1c7256f2847a"
-  integrity sha512-x7HjTwmxnhEspJefO+F6qLwZQeSoA6Xf+ySylNVRv46aDgjCfSqYHMgo+sSnt7MJlVaULWZwKiE2Q3G6ftYZwA==
-  dependencies:
-    "@babel/polyfill" "^7.0.0"
+vue-tweet-embed@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/vue-tweet-embed/-/vue-tweet-embed-2.3.1.tgz#72cb38a6e4cbca37e381d0dc5dced31a773c4632"
+  integrity sha512-8vgQj8Oi7ZJyIaCN8euDOVVwPlsAZ5C/yj/Tsc/KS93x7l/ylOjhC2AzGAFuVIzJibIhYekdtcarWkIV7S1YFQ==
 
 vue@^2.6.10:
   version "2.6.10"
