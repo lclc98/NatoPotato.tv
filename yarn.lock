@@ -8933,10 +8933,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-tweet-embed@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/vue-tweet-embed/-/vue-tweet-embed-2.3.1.tgz#72cb38a6e4cbca37e381d0dc5dced31a773c4632"
-  integrity sha512-8vgQj8Oi7ZJyIaCN8euDOVVwPlsAZ5C/yj/Tsc/KS93x7l/ylOjhC2AzGAFuVIzJibIhYekdtcarWkIV7S1YFQ==
+vue-tweet-embed@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/vue-tweet-embed/-/vue-tweet-embed-2.3.2.tgz#3f6ea2e9522c51a3caa39a7679b976d503b64e45"
+  integrity sha512-n88Wv8lcX/OMVxGHcll5/NmRhRlG9m5hBRB3Mqh5XdzD/qL46TcG6K17MmQqbC/bTZbWmuLsnzP5c46+UgiTIQ==
 
 vue@^2.6.10:
   version "2.6.10"
