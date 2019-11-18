@@ -85,7 +85,7 @@
             <div class="has-text-centered">
               <h2 class="subtitle">
                 G'Day Guys, What's Happening? My Name Is NatoPotato!<br><br>
-                I am a 25 E-Boy from Perth, Western Australia with a passion for games and
+                I am a 26 E-Boy from Perth, Western Australia with a passion for games and
                 entertaining, I have a beautiful fiancé and a feather baby named Alfie.
                 Streaming started for me when I lost my job and needed something to fill in my days,
                 I currently work casually, study, exercise, stream, create content and spend my free
