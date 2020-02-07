@@ -20,7 +20,7 @@
     "vue-tweet-embed": "^2.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.1.2",
     "@vue/cli-service": "^4.1.2",
     "@vue/eslint-config-airbnb": "^4.0.1",
