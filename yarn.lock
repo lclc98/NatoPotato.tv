@@ -9078,10 +9078,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-awesome-countdown@^1.0.24:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/vue-awesome-countdown/-/vue-awesome-countdown-1.0.24.tgz#b749cab733dead1b4eb15ce758454a2a507c12f6"
-  integrity sha512-M+hTKL/x08cJQQF0AGr4/58/nXHsUtWcLQyptZbJ6MnB45s+GP3HeP4SbvtCThD1Die6yGsCjE9zAtwH55LF5g==
+vue-awesome-countdown@^1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/vue-awesome-countdown/-/vue-awesome-countdown-1.0.25.tgz#08bb661a7a8e06d3c78defb2a48640ff265e0fd6"
+  integrity sha512-ujVS6ZfovOxg8aBh7Oj2ltkNKYYOU6jdf7GsZij8gODf63uHrtZu9PEmwVSmiUjxdLPYZlUl5NhFI18/IXBdlA==
   dependencies:
     "@vue/cli-service" "^4.2.3"
     vue-template-compiler "^2.6.10"
