@@ -13,7 +13,7 @@
     "bulma": "^0.8.2",
     "twitch": "^4.0.9",
     "vue": "^2.6.11",
-    "vue-awesome-countdown": "^1.0.25",
+    "vue-awesome-countdown": "^1.0.26",
     "vue-cookies": "^1.7.0",
     "vue-meta": "^2.3.3",
     "vue-router": "^3.1.6",
