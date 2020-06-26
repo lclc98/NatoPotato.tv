@@ -8856,10 +8856,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twitch@^4.0.10:
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/twitch/-/twitch-4.0.10.tgz#009dc1f790cb2945a012a98dc39c875d7a645a80"
-  integrity sha512-5hdpDVoQ3kV2MRG+JqVFpXG9BpLBqN3oAYzZiuh9sfiAFqb4vNR9F93mQ5YuSNhTVeepV7aQu+no8faWaA19NA==
+twitch@^4.0.12:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/twitch/-/twitch-4.0.12.tgz#498e0ab8a464e8a14d7d06d7440c043b2fcf308e"
+  integrity sha512-y4XwrGWnkVwtlrOCfw9F3gQC4xdywztKHhgm8g1siOgE0t48poGQeea54+uaFEAyWZ1JJ1CFu+KriLw3kRixww==
   dependencies:
     "@d-fischer/cache-decorators" "^1.0.2"
     "@d-fischer/logger" "^0.2.3"
