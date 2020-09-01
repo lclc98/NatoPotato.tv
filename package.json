@@ -14,7 +14,7 @@
     "twitch": "^4.1.4",
     "vue": "^2.6.12",
     "vue-awesome-countdown": "^1.1.2",
-    "vue-cookies": "^1.7.3",
+    "vue-cookies": "^1.7.4",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.4.3",
     "vue-tweet-embed": "^2.4.0"
